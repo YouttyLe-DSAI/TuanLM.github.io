@@ -4,8 +4,7 @@ weight: 2
 chapter: false
 pre: " <b> 1.12 </b> "
 ---
-# 📘 Báo cáo công việc Tuần 12 – Hành trình AWS
-
+# 📘 Báo cáo công việc Tuần 12 – AWS Journey 
 ## 1. Mục tiêu hàng tuần
 
 **Tuần 12** đánh dấu sự kết thúc của lộ trình học tập AWS. Mục tiêu chính là **tổng hợp và ứng dụng** tất cả các kỹ năng đã học trong 11 tuần qua vào một **Dự án Cuối khóa (Capstone Project)** toàn diện. Các mục tiêu chính bao gồm:

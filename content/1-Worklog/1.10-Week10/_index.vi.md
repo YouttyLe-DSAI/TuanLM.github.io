@@ -4,7 +4,7 @@ weight: 2
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
-# 📘 Báo cáo công việc Tuần 10 – Hành trình AWS
+# 📘 Báo cáo công việc Tuần 10 – AWS Journey 
 
 ## 1. Mục tiêu hàng tuần
 

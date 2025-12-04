@@ -4,8 +4,7 @@ weight: 1
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-# 📘 Báo cáo công việc Tuần 7 – Hành trình AWS
-
+# 📘 Báo cáo công việc Tuần 7 – AWS Journey 
 ## 1. Mục tiêu hàng tuần
 
 Trong **Tuần 7**, trọng tâm là xây dựng **Tính sẵn sàng cao (High Availability - HA)** và **Khả năng mở rộng (Scalability)** cho kiến trúc. Các mục tiêu chính bao gồm:

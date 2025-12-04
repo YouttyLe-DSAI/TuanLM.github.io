@@ -4,87 +4,61 @@ weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-### Mục tiêu tuần 1:
-- Làm quen quy trình, kênh liên lạc và nội quy thực tập FCJ.  
-- Hoàn tất **AWS Free Tier**, cấu hình **AWS CLI**, hiểu các nhóm dịch vụ cốt lõi.  
-- Thực hành EC2/EBS/SSH và thiết lập **AWS Budgets** để kiểm soát chi phí.
-- Nắm tổng quan hệ sinh thái AWS (Compute, Storage, Networking, Database, Security).  
-- Sử dụng thành thạo bước đầu **AWS Management Console** & **AWS CLI v2**.  
-- Tạo và vận hành một **EC2 t2.micro** trong Free Tier; thao tác **EBS** cơ bản.  
-- Bật **MFA**, tạo **IAM user** làm việc hằng ngày và đặt **Budgets**.
+# 📘 Báo cáo công việc Tuần 1 – AWS Journey
+
+## 1. Mục tiêu hàng tuần
+
+Mục tiêu chính của **Tuần 1** là thiết lập môi trường nền tảng cho hành trình AWS và hiểu các nguyên tắc vận hành cốt lõi. Các mục tiêu cụ thể bao gồm:
+
+*   **Onboarding (Nhập môn):** Làm quen với quy trình thực tập FCJ, các kênh liên lạc và nội quy.
+*   **Thiết lập tài khoản:** Hoàn tất đăng ký **AWS Free Tier**, cấu hình **AWS CLI**, và kích hoạt các chuẩn bảo mật cơ bản (MFA, IAM).
+*   **Dịch vụ cốt lõi:** Có cái nhìn tổng quan về hệ sinh thái AWS (Tính toán, Lưu trữ, Mạng, Cơ sở dữ liệu, Bảo mật).
+*   **Thực hành:** Sử dụng thành thạo **AWS Management Console** & **AWS CLI v2**.
+*   **Cơ sở hạ tầng:** Triển khai và vận hành một instance **EC2 t2.micro** và thực hiện các thao tác **EBS** cơ bản.
+*   **Kiểm soát chi phí:** Thiết lập **AWS Budgets** để giám sát chi tiêu.
 
 ---
 
-### Kết hoạch thực hiện 
+## 2. Tóm tắt công việc chi tiết
+
+### 🗂 Kế hoạch thực hiện so với Thực tế
+
 | Hạng mục | Kế hoạch | Thực tế | Trạng thái |
-|---|---|---|---|
-| Onboarding & nội quy | Giới thiệu, nắm kênh liên lạc | Đã giới thiệu, ghi chú chuẩn báo cáo | ✅ Done |
-| AWS overview | Hệ thống nhóm dịch vụ + mindmap | Hoàn tất, có ghi chú theo nhóm | ✅ Done |
-| Free Tier & bảo mật | Tạo account, bật MFA, tạo IAM user | Đã bật MFA; tạo user + group Viewer | ✅ Done |
-| AWS CLI | Cài CLI, cấu hình profile | Profile `acj-student`, test `sts` OK | ✅ Done |
-| EC2/EBS/SSH | Tạo EC2, SSH, attach EBS | EC2 t2.micro + EBS 8GB gp3, SSH ok | ✅ Done |
-| Quản lý chi phí | Đặt Budgets 5 USD/tháng | Nhận email alert thử nghiệm | ✅ Done |
+| :--- | :--- | :--- | :--- |
+| **Onboarding & Nội quy** | Giới thiệu, nắm bắt kênh liên lạc | Đã được giới thiệu, ghi chú chuẩn báo cáo | ✅ Hoàn thành |
+| **Tổng quan AWS** | Hệ thống hóa nhóm dịch vụ + Mindmap | Hoàn tất, đã ghi chú theo phân loại | ✅ Hoàn thành |
+| **Free Tier & Bảo mật** | Tạo tài khoản, bật MFA, tạo IAM user | Đã bật MFA; tạo user + nhóm Viewer | ✅ Hoàn thành |
+| **AWS CLI** | Cài đặt CLI, cấu hình profile | Đã set profile `acj-student`, test `sts` OK | ✅ Hoàn thành |
+| **EC2/EBS/SSH** | Tạo EC2, SSH, gắn EBS | EC2 t2.micro + EBS 8GB gp3, SSH thành công | ✅ Hoàn thành |
+| **Quản lý chi phí** | Đặt ngân sách $5/tháng | Đã nhận email cảnh báo thử nghiệm | ✅ Hoàn thành |
+
+### 📅 Nhật ký hoạt động theo ngày
+
+| Thứ | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| :--- | :--- | :--- | :--- | :--- |
+| **Thứ Hai** | **Onboarding:** Định hướng FCJ, đọc nội quy, học chuẩn báo cáo | 08/09 | 08/09 | [AWS Journey](https://cloudjourney.awsstudygroup.com) |
+| **Thứ Ba** | **Nghiên cứu:** Khám phá hệ sinh thái AWS (Compute/Storage/Networking/DB/Security), tạo mindmap | 09/09 | 09/09 | [AWS Journey](https://cloudjourney.awsstudygroup.com) |
+| **Thứ Tư** | **Thiết lập tài khoản:** Tạo **AWS Free Tier**, bật **MFA** cho root, tạo **IAM user** + nhóm Viewer | 10/09 | 10/09 | [AWS Journey](https://cloudjourney.awsstudygroup.com) |
+| **Thứ Năm** | **Cài đặt CLI:** Cài **AWS CLI v2** (Windows), chạy `aws configure` (profile `acj-student`), kiểm tra danh tính `sts` | 11/09 | 11/09 | [AWS Journey](https://cloudjourney.awsstudygroup.com) |
+| **Thứ Sáu** | **Lý thuyết:** Học về **EC2** (loại instance, AMI, EBS, SG, Elastic IP) + checklist Free Tier | 12/09 | 12/09 | [AWS Journey](https://cloudjourney.awsstudygroup.com) |
+| **Thứ Bảy** | **Thực hành:** Tạo **EC2 t2.micro (AL2023)**, tạo/dùng **key pair (.pem)**, **SSH**; **gắn EBS 8GB**, định dạng & mount | 13/09 | 13/09 | [AWS Journey](https://cloudjourney.awsstudygroup.com) |
 
 ---
 
-### Nhật ký theo ngày 
-| Thứ | Nội dung công việc | Bắt đầu | Hoàn thành | Tài liệu/Link |
-|---|---|---|---|---|
-| 2 | Onboarding FCJ, đọc nội quy, chuẩn báo cáo | 08/09 | 08/09 | https://cloudjourney.awsstudygroup.com |
-| 3 | Tìm hiểu AWS (Compute/Storage/Networking/DB/Security), tạo mindmap | 09/09 | 09/09 | https://cloudjourney.awsstudygroup.com |
-| 4 | Tạo **AWS Free Tier**, bật **MFA** cho root, tạo **IAM user** + group Viewer | 10/09 | 10/09 | https://cloudjourney.awsstudygroup.com |
-| 5 | Cài **AWS CLI v2** (Windows), `aws configure` profile `acj-student`, kiểm tra `sts` | 11/09 | 11/09 |https://cloudjourney.awsstudygroup.com |
-| 6 | Học **EC2** (instance types, AMI, EBS, SG, Elastic IP) + checklist Free Tier | 12/09 | 12/09 | https://cloudjourney.awsstudygroup.com |
-| 7 | Thực hành: tạo **EC2 t2.micro (Amazon Linux 2023)**, tạo & dùng **key pair (.pem)**, **SSH**; **attach EBS 8GB**, format & mount | 13/09 | 13/09 | https://cloudjourney.awsstudygroup.com |
+## 3. Kết quả & Minh chứng
 
----
+### 3.1 Tài nguyên đã tạo
+*   **IAM**: 01 User làm việc hàng ngày (Nhóm: Viewer), đã bật **MFA** cho tài khoản root.
+*   **EC2**: `t2.micro` (Free Tier), AMI: Amazon Linux 2023.
+*   **Security Group**: Quy tắc Inbound mở cổng `22/tcp` chỉ giới hạn cho **My IP**.
+*   **EBS**: Volume 8GB `gp3`, đã định dạng (`xfs`) và mount vào thư mục `/data`.
+*   **Budgets**: Ngân sách hàng tháng đặt mức **$5 USD** với cảnh báo qua email.
+*   **CLI Region**: Mặc định là `ap-southeast-1` (Singapore).
 
-### Kết quả & minh chứng
-**Tài nguyên đã tạo**
-- **IAM**: 01 user làm việc hằng ngày (Group: Viewer), **MFA** bật cho root.  
-- **EC2**: t2.micro (Free Tier), AMI: Amazon Linux 2023, **Security Group** mở `22/tcp` từ **My IP**.  
-- **EBS**: 8GB gp3, đã format (xfs) và mount vào `/data`.  
-- **Budgets**: Monthly = **5 USD**, alert qua email.  
-- **Region mặc định CLI**: `ap-southeast-1` (Singapore).  
-
-**Lệnh CLI tiêu biểu**
+### 3.2 Các lệnh CLI đã thực thi
 ```bash
 aws sts get-caller-identity --profile acj-student
 aws ec2 describe-regions --profile acj-student --output table
 aws ec2 describe-instances --profile acj-student --region ap-southeast-1
 aws ec2 create-key-pair --key-name fcj-key --query "KeyMaterial" --output text > fcj-key.pem
-```
-
-**Minh chứng đã lưu**
-- Ảnh: trang **MFA enabled**, **IAM user & group**, **Budgets alert**, **EC2 instance detail**, **EBS volume** và mount point.
-
----
-
-### Vấn đề và cách xử lý
-| Vấn đề | Nguyên nhân | Cách xử lý | Kết quả |
-|---|---|---|---|
-| SSH thất bại lần đầu | SG chưa mở đúng IP | Cập nhật inbound rule → **My IP** | SSH OK |
-| CLI báo thiếu credentials | Nhầm profile/region | Chuẩn hoá profile `acj-student`, set default region `ap-southeast-1` | CLI OK |
-| Khó tìm dịch vụ trên Console | Chưa quen UI | Dùng ô Search + pin dịch vụ (EC2, IAM, S3, Budgets) | Điều hướng nhanh hơn |
-
----
-
-### Kiến thức rút ra
-- **Least-privilege**: dùng **IAM user/role**, tránh thao tác bằng root.  
-- Quy trình chuẩn tạo EC2 Free Tier + **EBS attach/format/mount**.  
-- Đồng bộ **Console ↔ CLI**, quản trị tài nguyên bằng **tag** (`Project=FCJ, Owner=The Liems, Env=Dev`).  
-- Sử dụng **Budgets** để phòng tránh vượt chi phí.
-
----
-
-### Chi phí & bảo mật
-- **Budgets:** 5 USD/tháng (đã nhận email thử nghiệm).  
-- **Bảo mật:** Bật **MFA**, lưu **.pem** an toàn, hạn chế **SSH** chỉ từ **My IP**.  
-- **Tagging:** `Project=FCJ`, `Owner=The Liems`, `Env=Dev`.
-
----
-
-### Rủi ro và biện pháp
-- Rủi ro vượt Free Tier khi quên tắt tài nguyên → Đặt **Budgets** + review tags hằng tuần.  
-- Bảo mật key pair/credentials → Lưu trữ an toàn, không commit lên git.
 
