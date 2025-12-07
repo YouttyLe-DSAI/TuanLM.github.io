@@ -15,21 +15,21 @@
     <title>Worklog Tuần 1 :: Báo cáo thực tập</title>
 
     
-    <link href="../../../css/nucleus.css?1764831060" rel="stylesheet">
-    <link href="../../../css/fontawesome-all.min.css?1764831060" rel="stylesheet">
-    <link href="../../../css/hybrid.css?1764831060" rel="stylesheet">
-    <link href="../../../css/featherlight.min.css?1764831060" rel="stylesheet">
-    <link href="../../../css/perfect-scrollbar.min.css?1764831060" rel="stylesheet">
-    <link href="../../../css/auto-complete.css?1764831060" rel="stylesheet">
-    <link href="../../../css/atom-one-dark-reasonable.css?1764831060" rel="stylesheet">
-    <link href="../../../css/theme.css?1764831060" rel="stylesheet">
-    <link href="../../../css/hugo-theme.css?1764831060" rel="stylesheet">
+    <link href="../../../css/nucleus.css?1765095768" rel="stylesheet">
+    <link href="../../../css/fontawesome-all.min.css?1765095768" rel="stylesheet">
+    <link href="../../../css/hybrid.css?1765095768" rel="stylesheet">
+    <link href="../../../css/featherlight.min.css?1765095768" rel="stylesheet">
+    <link href="../../../css/perfect-scrollbar.min.css?1765095768" rel="stylesheet">
+    <link href="../../../css/auto-complete.css?1765095768" rel="stylesheet">
+    <link href="../../../css/atom-one-dark-reasonable.css?1765095768" rel="stylesheet">
+    <link href="../../../css/theme.css?1765095768" rel="stylesheet">
+    <link href="../../../css/hugo-theme.css?1765095768" rel="stylesheet">
     
-    <link href="../../../css/theme-workshop.css?1764831060" rel="stylesheet">
+    <link href="../../../css/theme-workshop.css?1765095768" rel="stylesheet">
     
     
 
-    <script src="../../../js/jquery-3.3.1.min.js?1764831060"></script>
+    <script src="../../../js/jquery-3.3.1.min.js?1765095768"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -88,14 +88,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="../../../js/lunr.min.js?1764831060"></script>
-<script type="text/javascript" src="../../../js/auto-complete.js?1764831060"></script>
+<script type="text/javascript" src="../../../js/lunr.min.js?1765095768"></script>
+<script type="text/javascript" src="../../../js/auto-complete.js?1765095768"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo\/\/vi";
     
 </script>
-<script type="text/javascript" src="../../../js/search.js?1764831060"></script>
+<script type="text/javascript" src="../../../js/search.js?1765095768"></script>
  
   </div>
 
@@ -986,16 +986,17 @@
                     <div class="progress">
   <div class="wrapper"><nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#1-mục-tiêu-hàng-tuần">1. Mục tiêu hàng tuần</a></li>
+    <li><a href="#2-tóm-tắt-công-việc-chi-tiết">2. Tóm tắt công việc chi tiết</a>
       <ul>
-        <li><a href="#mục-tiêu-tuần-1">Mục tiêu tuần 1:</a></li>
-        <li><a href="#kết-hoạch-thực-hiện">Kết hoạch thực hiện</a></li>
-        <li><a href="#nhật-ký-theo-ngày">Nhật ký theo ngày</a></li>
-        <li><a href="#kết-quả--minh-chứng">Kết quả &amp; minh chứng</a></li>
-        <li><a href="#vấn-đề-và-cách-xử-lý">Vấn đề và cách xử lý</a></li>
-        <li><a href="#kiến-thức-rút-ra">Kiến thức rút ra</a></li>
-        <li><a href="#chi-phí--bảo-mật">Chi phí &amp; bảo mật</a></li>
-        <li><a href="#rủi-ro-và-biện-pháp">Rủi ro và biện pháp</a></li>
+        <li><a href="#-kế-hoạch-thực-hiện-so-với-thực-tế">🗂 Kế hoạch thực hiện so với Thực tế</a></li>
+        <li><a href="#-nhật-ký-hoạt-động-theo-ngày">📅 Nhật ký hoạt động theo ngày</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-kết-quả--minh-chứng">3. Kết quả &amp; Minh chứng</a>
+      <ul>
+        <li><a href="#31-tài-nguyên-đã-tạo">3.1 Tài nguyên đã tạo</a></li>
+        <li><a href="#32-các-lệnh-cli-đã-thực-thi">3.2 Các lệnh CLI đã thực thi</a></li>
       </ul>
     </li>
   </ul>
@@ -1022,196 +1023,141 @@
 
 
 
-	<h3 id="mục-tiêu-tuần-1">Mục tiêu tuần 1:</h3>
+	<h1 id="-báo-cáo-công-việc-tuần-1--aws-journey">📘 Báo cáo công việc Tuần 1 – AWS Journey</h1>
+<h2 id="1-mục-tiêu-hàng-tuần">1. Mục tiêu hàng tuần</h2>
+<p>Mục tiêu chính của <strong>Tuần 1</strong> là thiết lập môi trường nền tảng cho hành trình AWS và hiểu các nguyên tắc vận hành cốt lõi. Các mục tiêu cụ thể bao gồm:</p>
 <ul>
-<li>Làm quen quy trình, kênh liên lạc và nội quy thực tập FCJ.</li>
-<li>Hoàn tất <strong>AWS Free Tier</strong>, cấu hình <strong>AWS CLI</strong>, hiểu các nhóm dịch vụ cốt lõi.</li>
-<li>Thực hành EC2/EBS/SSH và thiết lập <strong>AWS Budgets</strong> để kiểm soát chi phí.</li>
-<li>Nắm tổng quan hệ sinh thái AWS (Compute, Storage, Networking, Database, Security).</li>
-<li>Sử dụng thành thạo bước đầu <strong>AWS Management Console</strong> &amp; <strong>AWS CLI v2</strong>.</li>
-<li>Tạo và vận hành một <strong>EC2 t2.micro</strong> trong Free Tier; thao tác <strong>EBS</strong> cơ bản.</li>
-<li>Bật <strong>MFA</strong>, tạo <strong>IAM user</strong> làm việc hằng ngày và đặt <strong>Budgets</strong>.</li>
+<li><strong>Onboarding (Nhập môn):</strong> Làm quen với quy trình thực tập FCJ, các kênh liên lạc và nội quy.</li>
+<li><strong>Thiết lập tài khoản:</strong> Hoàn tất đăng ký <strong>AWS Free Tier</strong>, cấu hình <strong>AWS CLI</strong>, và kích hoạt các chuẩn bảo mật cơ bản (MFA, IAM).</li>
+<li><strong>Dịch vụ cốt lõi:</strong> Có cái nhìn tổng quan về hệ sinh thái AWS (Tính toán, Lưu trữ, Mạng, Cơ sở dữ liệu, Bảo mật).</li>
+<li><strong>Thực hành:</strong> Sử dụng thành thạo <strong>AWS Management Console</strong> &amp; <strong>AWS CLI v2</strong>.</li>
+<li><strong>Cơ sở hạ tầng:</strong> Triển khai và vận hành một instance <strong>EC2 t2.micro</strong> và thực hiện các thao tác <strong>EBS</strong> cơ bản.</li>
+<li><strong>Kiểm soát chi phí:</strong> Thiết lập <strong>AWS Budgets</strong> để giám sát chi tiêu.</li>
 </ul>
 <hr>
-<h3 id="kết-hoạch-thực-hiện">Kết hoạch thực hiện</h3>
+<h2 id="2-tóm-tắt-công-việc-chi-tiết">2. Tóm tắt công việc chi tiết</h2>
+<h3 id="-kế-hoạch-thực-hiện-so-với-thực-tế">🗂 Kế hoạch thực hiện so với Thực tế</h3>
 <table>
   <thead>
       <tr>
-          <th>Hạng mục</th>
-          <th>Kế hoạch</th>
-          <th>Thực tế</th>
-          <th>Trạng thái</th>
+          <th style="text-align: left">Hạng mục</th>
+          <th style="text-align: left">Kế hoạch</th>
+          <th style="text-align: left">Thực tế</th>
+          <th style="text-align: left">Trạng thái</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Onboarding &amp; nội quy</td>
-          <td>Giới thiệu, nắm kênh liên lạc</td>
-          <td>Đã giới thiệu, ghi chú chuẩn báo cáo</td>
-          <td>✅ Done</td>
+          <td style="text-align: left"><strong>Onboarding &amp; Nội quy</strong></td>
+          <td style="text-align: left">Giới thiệu, nắm bắt kênh liên lạc</td>
+          <td style="text-align: left">Đã được giới thiệu, ghi chú chuẩn báo cáo</td>
+          <td style="text-align: left">✅ Hoàn thành</td>
       </tr>
       <tr>
-          <td>AWS overview</td>
-          <td>Hệ thống nhóm dịch vụ + mindmap</td>
-          <td>Hoàn tất, có ghi chú theo nhóm</td>
-          <td>✅ Done</td>
+          <td style="text-align: left"><strong>Tổng quan AWS</strong></td>
+          <td style="text-align: left">Hệ thống hóa nhóm dịch vụ + Mindmap</td>
+          <td style="text-align: left">Hoàn tất, đã ghi chú theo phân loại</td>
+          <td style="text-align: left">✅ Hoàn thành</td>
       </tr>
       <tr>
-          <td>Free Tier &amp; bảo mật</td>
-          <td>Tạo account, bật MFA, tạo IAM user</td>
-          <td>Đã bật MFA; tạo user + group Viewer</td>
-          <td>✅ Done</td>
+          <td style="text-align: left"><strong>Free Tier &amp; Bảo mật</strong></td>
+          <td style="text-align: left">Tạo tài khoản, bật MFA, tạo IAM user</td>
+          <td style="text-align: left">Đã bật MFA; tạo user + nhóm Viewer</td>
+          <td style="text-align: left">✅ Hoàn thành</td>
       </tr>
       <tr>
-          <td>AWS CLI</td>
-          <td>Cài CLI, cấu hình profile</td>
-          <td>Profile <code>acj-student</code>, test <code>sts</code> OK</td>
-          <td>✅ Done</td>
+          <td style="text-align: left"><strong>AWS CLI</strong></td>
+          <td style="text-align: left">Cài đặt CLI, cấu hình profile</td>
+          <td style="text-align: left">Đã set profile <code>acj-student</code>, test <code>sts</code> OK</td>
+          <td style="text-align: left">✅ Hoàn thành</td>
       </tr>
       <tr>
-          <td>EC2/EBS/SSH</td>
-          <td>Tạo EC2, SSH, attach EBS</td>
-          <td>EC2 t2.micro + EBS 8GB gp3, SSH ok</td>
-          <td>✅ Done</td>
+          <td style="text-align: left"><strong>EC2/EBS/SSH</strong></td>
+          <td style="text-align: left">Tạo EC2, SSH, gắn EBS</td>
+          <td style="text-align: left">EC2 t2.micro + EBS 8GB gp3, SSH thành công</td>
+          <td style="text-align: left">✅ Hoàn thành</td>
       </tr>
       <tr>
-          <td>Quản lý chi phí</td>
-          <td>Đặt Budgets 5 USD/tháng</td>
-          <td>Nhận email alert thử nghiệm</td>
-          <td>✅ Done</td>
+          <td style="text-align: left"><strong>Quản lý chi phí</strong></td>
+          <td style="text-align: left">Đặt ngân sách $5/tháng</td>
+          <td style="text-align: left">Đã nhận email cảnh báo thử nghiệm</td>
+          <td style="text-align: left">✅ Hoàn thành</td>
       </tr>
   </tbody>
 </table>
-<hr>
-<h3 id="nhật-ký-theo-ngày">Nhật ký theo ngày</h3>
+<h3 id="-nhật-ký-hoạt-động-theo-ngày">📅 Nhật ký hoạt động theo ngày</h3>
 <table>
   <thead>
       <tr>
-          <th>Thứ</th>
-          <th>Nội dung công việc</th>
-          <th>Bắt đầu</th>
-          <th>Hoàn thành</th>
-          <th>Tài liệu/Link</th>
+          <th style="text-align: left">Thứ</th>
+          <th style="text-align: left">Nhiệm vụ</th>
+          <th style="text-align: left">Ngày bắt đầu</th>
+          <th style="text-align: left">Ngày hoàn thành</th>
+          <th style="text-align: left">Tài liệu tham khảo</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>2</td>
-          <td>Onboarding FCJ, đọc nội quy, chuẩn báo cáo</td>
-          <td>08/09</td>
-          <td>08/09</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com">https://cloudjourney.awsstudygroup.com</a></td>
+          <td style="text-align: left"><strong>Thứ Hai</strong></td>
+          <td style="text-align: left"><strong>Onboarding:</strong> Định hướng FCJ, đọc nội quy, học chuẩn báo cáo</td>
+          <td style="text-align: left">08/09</td>
+          <td style="text-align: left">08/09</td>
+          <td style="text-align: left"><a href="https://cloudjourney.awsstudygroup.com">AWS Journey</a></td>
       </tr>
       <tr>
-          <td>3</td>
-          <td>Tìm hiểu AWS (Compute/Storage/Networking/DB/Security), tạo mindmap</td>
-          <td>09/09</td>
-          <td>09/09</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com">https://cloudjourney.awsstudygroup.com</a></td>
+          <td style="text-align: left"><strong>Thứ Ba</strong></td>
+          <td style="text-align: left"><strong>Nghiên cứu:</strong> Khám phá hệ sinh thái AWS (Compute/Storage/Networking/DB/Security), tạo mindmap</td>
+          <td style="text-align: left">09/09</td>
+          <td style="text-align: left">09/09</td>
+          <td style="text-align: left"><a href="https://cloudjourney.awsstudygroup.com">AWS Journey</a></td>
       </tr>
       <tr>
-          <td>4</td>
-          <td>Tạo <strong>AWS Free Tier</strong>, bật <strong>MFA</strong> cho root, tạo <strong>IAM user</strong> + group Viewer</td>
-          <td>10/09</td>
-          <td>10/09</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com">https://cloudjourney.awsstudygroup.com</a></td>
+          <td style="text-align: left"><strong>Thứ Tư</strong></td>
+          <td style="text-align: left"><strong>Thiết lập tài khoản:</strong> Tạo <strong>AWS Free Tier</strong>, bật <strong>MFA</strong> cho root, tạo <strong>IAM user</strong> + nhóm Viewer</td>
+          <td style="text-align: left">10/09</td>
+          <td style="text-align: left">10/09</td>
+          <td style="text-align: left"><a href="https://cloudjourney.awsstudygroup.com">AWS Journey</a></td>
       </tr>
       <tr>
-          <td>5</td>
-          <td>Cài <strong>AWS CLI v2</strong> (Windows), <code>aws configure</code> profile <code>acj-student</code>, kiểm tra <code>sts</code></td>
-          <td>11/09</td>
-          <td>11/09</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com">https://cloudjourney.awsstudygroup.com</a></td>
+          <td style="text-align: left"><strong>Thứ Năm</strong></td>
+          <td style="text-align: left"><strong>Cài đặt CLI:</strong> Cài <strong>AWS CLI v2</strong> (Windows), chạy <code>aws configure</code> (profile <code>acj-student</code>), kiểm tra danh tính <code>sts</code></td>
+          <td style="text-align: left">11/09</td>
+          <td style="text-align: left">11/09</td>
+          <td style="text-align: left"><a href="https://cloudjourney.awsstudygroup.com">AWS Journey</a></td>
       </tr>
       <tr>
-          <td>6</td>
-          <td>Học <strong>EC2</strong> (instance types, AMI, EBS, SG, Elastic IP) + checklist Free Tier</td>
-          <td>12/09</td>
-          <td>12/09</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com">https://cloudjourney.awsstudygroup.com</a></td>
+          <td style="text-align: left"><strong>Thứ Sáu</strong></td>
+          <td style="text-align: left"><strong>Lý thuyết:</strong> Học về <strong>EC2</strong> (loại instance, AMI, EBS, SG, Elastic IP) + checklist Free Tier</td>
+          <td style="text-align: left">12/09</td>
+          <td style="text-align: left">12/09</td>
+          <td style="text-align: left"><a href="https://cloudjourney.awsstudygroup.com">AWS Journey</a></td>
       </tr>
       <tr>
-          <td>7</td>
-          <td>Thực hành: tạo <strong>EC2 t2.micro (Amazon Linux 2023)</strong>, tạo &amp; dùng <strong>key pair (.pem)</strong>, <strong>SSH</strong>; <strong>attach EBS 8GB</strong>, format &amp; mount</td>
-          <td>13/09</td>
-          <td>13/09</td>
-          <td><a href="https://cloudjourney.awsstudygroup.com">https://cloudjourney.awsstudygroup.com</a></td>
+          <td style="text-align: left"><strong>Thứ Bảy</strong></td>
+          <td style="text-align: left"><strong>Thực hành:</strong> Tạo <strong>EC2 t2.micro (AL2023)</strong>, tạo/dùng <strong>key pair (.pem)</strong>, <strong>SSH</strong>; <strong>gắn EBS 8GB</strong>, định dạng &amp; mount</td>
+          <td style="text-align: left">13/09</td>
+          <td style="text-align: left">13/09</td>
+          <td style="text-align: left"><a href="https://cloudjourney.awsstudygroup.com">AWS Journey</a></td>
       </tr>
   </tbody>
 </table>
 <hr>
-<h3 id="kết-quả--minh-chứng">Kết quả &amp; minh chứng</h3>
-<p><strong>Tài nguyên đã tạo</strong></p>
+<h2 id="3-kết-quả--minh-chứng">3. Kết quả &amp; Minh chứng</h2>
+<h3 id="31-tài-nguyên-đã-tạo">3.1 Tài nguyên đã tạo</h3>
 <ul>
-<li><strong>IAM</strong>: 01 user làm việc hằng ngày (Group: Viewer), <strong>MFA</strong> bật cho root.</li>
-<li><strong>EC2</strong>: t2.micro (Free Tier), AMI: Amazon Linux 2023, <strong>Security Group</strong> mở <code>22/tcp</code> từ <strong>My IP</strong>.</li>
-<li><strong>EBS</strong>: 8GB gp3, đã format (xfs) và mount vào <code>/data</code>.</li>
-<li><strong>Budgets</strong>: Monthly = <strong>5 USD</strong>, alert qua email.</li>
-<li><strong>Region mặc định CLI</strong>: <code>ap-southeast-1</code> (Singapore).</li>
+<li><strong>IAM</strong>: 01 User làm việc hàng ngày (Nhóm: Viewer), đã bật <strong>MFA</strong> cho tài khoản root.</li>
+<li><strong>EC2</strong>: <code>t2.micro</code> (Free Tier), AMI: Amazon Linux 2023.</li>
+<li><strong>Security Group</strong>: Quy tắc Inbound mở cổng <code>22/tcp</code> chỉ giới hạn cho <strong>My IP</strong>.</li>
+<li><strong>EBS</strong>: Volume 8GB <code>gp3</code>, đã định dạng (<code>xfs</code>) và mount vào thư mục <code>/data</code>.</li>
+<li><strong>Budgets</strong>: Ngân sách hàng tháng đặt mức <strong>$5 USD</strong> với cảnh báo qua email.</li>
+<li><strong>CLI Region</strong>: Mặc định là <code>ap-southeast-1</code> (Singapore).</li>
 </ul>
-<p><strong>Lệnh CLI tiêu biểu</strong></p>
+<h3 id="32-các-lệnh-cli-đã-thực-thi">3.2 Các lệnh CLI đã thực thi</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws sts get-caller-identity --profile acj-student
 </span></span><span style="display:flex;"><span>aws ec2 describe-regions --profile acj-student --output table
 </span></span><span style="display:flex;"><span>aws ec2 describe-instances --profile acj-student --region ap-southeast-1
 </span></span><span style="display:flex;"><span>aws ec2 create-key-pair --key-name fcj-key --query <span style="color:#e6db74">&#34;KeyMaterial&#34;</span> --output text &gt; fcj-key.pem
-</span></span></code></pre></div><p><strong>Minh chứng đã lưu</strong></p>
-<ul>
-<li>Ảnh: trang <strong>MFA enabled</strong>, <strong>IAM user &amp; group</strong>, <strong>Budgets alert</strong>, <strong>EC2 instance detail</strong>, <strong>EBS volume</strong> và mount point.</li>
-</ul>
-<hr>
-<h3 id="vấn-đề-và-cách-xử-lý">Vấn đề và cách xử lý</h3>
-<table>
-  <thead>
-      <tr>
-          <th>Vấn đề</th>
-          <th>Nguyên nhân</th>
-          <th>Cách xử lý</th>
-          <th>Kết quả</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>SSH thất bại lần đầu</td>
-          <td>SG chưa mở đúng IP</td>
-          <td>Cập nhật inbound rule → <strong>My IP</strong></td>
-          <td>SSH OK</td>
-      </tr>
-      <tr>
-          <td>CLI báo thiếu credentials</td>
-          <td>Nhầm profile/region</td>
-          <td>Chuẩn hoá profile <code>acj-student</code>, set default region <code>ap-southeast-1</code></td>
-          <td>CLI OK</td>
-      </tr>
-      <tr>
-          <td>Khó tìm dịch vụ trên Console</td>
-          <td>Chưa quen UI</td>
-          <td>Dùng ô Search + pin dịch vụ (EC2, IAM, S3, Budgets)</td>
-          <td>Điều hướng nhanh hơn</td>
-      </tr>
-  </tbody>
-</table>
-<hr>
-<h3 id="kiến-thức-rút-ra">Kiến thức rút ra</h3>
-<ul>
-<li><strong>Least-privilege</strong>: dùng <strong>IAM user/role</strong>, tránh thao tác bằng root.</li>
-<li>Quy trình chuẩn tạo EC2 Free Tier + <strong>EBS attach/format/mount</strong>.</li>
-<li>Đồng bộ <strong>Console ↔ CLI</strong>, quản trị tài nguyên bằng <strong>tag</strong> (<code>Project=FCJ, Owner=The Liems, Env=Dev</code>).</li>
-<li>Sử dụng <strong>Budgets</strong> để phòng tránh vượt chi phí.</li>
-</ul>
-<hr>
-<h3 id="chi-phí--bảo-mật">Chi phí &amp; bảo mật</h3>
-<ul>
-<li><strong>Budgets:</strong> 5 USD/tháng (đã nhận email thử nghiệm).</li>
-<li><strong>Bảo mật:</strong> Bật <strong>MFA</strong>, lưu <strong>.pem</strong> an toàn, hạn chế <strong>SSH</strong> chỉ từ <strong>My IP</strong>.</li>
-<li><strong>Tagging:</strong> <code>Project=FCJ</code>, <code>Owner=The Liems</code>, <code>Env=Dev</code>.</li>
-</ul>
-<hr>
-<h3 id="rủi-ro-và-biện-pháp">Rủi ro và biện pháp</h3>
-<ul>
-<li>Rủi ro vượt Free Tier khi quên tắt tài nguyên → Đặt <strong>Budgets</strong> + review tags hằng tuần.</li>
-<li>Bảo mật key pair/credentials → Lưu trữ an toàn, không commit lên git.</li>
-</ul>
-
+</span></span></code></pre></div>
 
 
 
@@ -1909,19 +1855,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="../../../js/clipboard.min.js?1764831060"></script>
-    <script src="../../../js/perfect-scrollbar.min.js?1764831060"></script>
-    <script src="../../../js/perfect-scrollbar.jquery.min.js?1764831060"></script>
-    <script src="../../../js/jquery.sticky.js?1764831060"></script>
-    <script src="../../../js/featherlight.min.js?1764831060"></script>
-    <script src="../../../js/highlight.pack.js?1764831060"></script>
+    <script src="../../../js/clipboard.min.js?1765095768"></script>
+    <script src="../../../js/perfect-scrollbar.min.js?1765095768"></script>
+    <script src="../../../js/perfect-scrollbar.jquery.min.js?1765095768"></script>
+    <script src="../../../js/jquery.sticky.js?1765095768"></script>
+    <script src="../../../js/featherlight.min.js?1765095768"></script>
+    <script src="../../../js/highlight.pack.js?1765095768"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="../../../js/modernizr.custom-3.6.0.js?1764831060"></script>
-    <script src="../../../js/learn.js?1764831060"></script>
-    <script src="../../../js/hugo-learn.js?1764831060"></script>
+    <script src="../../../js/modernizr.custom-3.6.0.js?1765095768"></script>
+    <script src="../../../js/learn.js?1765095768"></script>
+    <script src="../../../js/hugo-learn.js?1765095768"></script>
 
-    <link href="../../../mermaid/mermaid.css?1764831060" rel="stylesheet" />
-    <script src="../../../mermaid/mermaid.js?1764831060"></script>
+    <link href="../../../mermaid/mermaid.css?1765095768" rel="stylesheet" />
+    <script src="../../../mermaid/mermaid.js?1765095768"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
