@@ -38,42 +38,6 @@
                 href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/3-blogstranslated/3.3-blog3/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/3-blogstranslated/3.4-blog4/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/3-blogstranslated/3.4-blog4/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/3-blogstranslated/3.4-blog4/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/3-blogstranslated/3.5-blog5/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/3-blogstranslated/3.5-blog5/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/3-blogstranslated/3.5-blog5/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/3-blogstranslated/3.6-blog6/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/3-blogstranslated/3.6-blog6/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/3-blogstranslated/3.6-blog6/"
-                />
-  </url><url>
     <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.3-s3-vpc/5.3.1-create-gwe/</loc>
     <xhtml:link
                 rel="alternate"

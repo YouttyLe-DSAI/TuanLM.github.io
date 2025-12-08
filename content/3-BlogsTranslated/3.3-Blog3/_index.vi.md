@@ -2,7 +2,7 @@
 title: "Blog 3"
 weight: 1
 chapter: false
-pre: " <b> 3.3. </b> "
+pre: " <b> 3.3 </b> "
 ---
 # **Melting The Ice \- Cách Natural Intelligence đơn giản hóa việc chuyển đổi Data lake sang Apache Iceberg**
 

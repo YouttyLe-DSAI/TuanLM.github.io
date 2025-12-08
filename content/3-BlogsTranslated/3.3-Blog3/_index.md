@@ -2,7 +2,7 @@
 title: "Blog 3"
 weight: 1
 chapter: false
-pre: " <b> 3.3. </b> "
+pre: " <b> 3.3 </b> "
 ---
 # **Melting The Ice \- How Natural Intelligence Simplified a Data Lake Migration to Apache Iceberg**
 
