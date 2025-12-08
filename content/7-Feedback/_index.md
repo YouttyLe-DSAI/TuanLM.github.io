@@ -5,42 +5,46 @@ chapter: false
 pre: " <b> 7. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+### Part 1: Professional Growth & Skills
 
-> Here, you can freely share your personal opinions about your experience participating in the First Cloud Journey program. This will help the FCJ team improve any shortcomings based on the following aspects:
+**1. Knowledge & Technology**
+* **Tech stack:** Over the past 3 months, I have truly mastered AWS Core Services (EC2, S3, RDS) and Infrastructure as Code (Terraform) – topics I previously only knew in theory. Additionally, I got hands-on experience with CI/CD pipelines, an area that AI students like me often overlook.
+* **Theory vs. Reality:** At university, as long as the code runs, it's done (Happy Case). At FCJ, I learned that running code is not enough; it must be cost-optimized, secure, and scalable.
+* **Biggest Challenge:** Migrating a database from on-premise to the Cloud. Handling data synchronization without causing service downtime was the toughest problem I solved.
 
-### Overall Evaluation
+**2. Soft Skills & Workflow**
+* **Skills:** The skill of "Asking the right questions" is what I honed the most. Instead of just asking "Why is this broken?", I learned to frame it as "I tried A and B, but got result C. Is my approach correct?".
+* **Workflow:** I really appreciate the strict Code Review process. The feedback from seniors didn't just catch syntax errors but also suggested ways to write cleaner, more optimized code.
 
-**1. Working Environment**  
-The working environment is very friendly and open. FCJ members are always willing to help whenever I encounter difficulties, even outside working hours. The workspace is tidy and comfortable, helping me focus better. However, I think it would be nice to have more social gatherings or team bonding activities to strengthen relationships.
+### Part 2: People & Culture
 
-**2. Support from Mentor / Team Admin**  
-The mentor provides very detailed guidance, explains clearly when I don’t understand, and always encourages me to ask questions. The admin team supports administrative tasks, provides necessary documents, and creates favorable conditions for me to work effectively. I especially appreciate that the mentor allows me to try and solve problems myself instead of just giving the answer.
+**3. Mentorship Experience**
+* **Style:** My mentor follows a "Coaching" style – never giving the answer immediately but asking leading questions so I can find the solution myself. This was challenging at first but helped me retain knowledge effectively.
+* **Impression:** The mentor's calmness during system incidents. Instead of panicking, he guided the team step-by-step to trace logs and fix the issue systematically.
 
-**3. Relevance of Work to Academic Major**  
-The tasks I was assigned align well with the knowledge I learned at university, while also introducing me to new areas I had never encountered before. This allowed me to both strengthen my foundational knowledge and gain practical skills.
+**4. Culture & Connection**
+* **Atmosphere:** The working environment is very flat and open. I felt comfortable debating technical solutions with Mentors without fear of judgment, as long as I had logical arguments.
+* **Events:** Beyond the "day in the life" office experiences, FCJ and the seniors organized many professional sharing sessions, helping everyone gain a deeper and broader perspective on AWS.
 
-**4. Learning & Skill Development Opportunities**  
-During the internship, I learned many new skills such as using project management tools, teamwork skills, and professional communication in a corporate environment. The mentor also shared valuable real-world experiences that helped me better plan my career path.
+### Part 3: Operations & Support
 
-**5. Company Culture & Team Spirit**  
-The company culture is very positive: everyone respects each other, works seriously but still keeps things enjoyable. When there are urgent projects, everyone works together and supports one another regardless of their position. This made me feel like a real part of the team, even as an intern.
+**5. Admin Team & FCJ Team Role**
+* **Onboarding:** The internal "Cloud Journey" documentation is incredibly detailed. It even predicts common errors and provides ready-made solutions for newbies.
+* **Support:** The Admin team is very enthusiastic. Just be brave enough to ask, and you will definitely get support.
 
-**6. Internship Policies / Benefits**  
-The company provides an internship allowance and offers flexible working hours when needed. In addition, having the opportunity to join internal training sessions is a big plus.
-
----
-
-### Additional Questions
-- What did you find **most satisfying** during your internship?  
-- What do you think the company **should improve** for future interns?  
-- If recommending to a friend, would you **suggest they intern here**? Why or why not?  
+**6. Facilities**
+* **Workspace:** Open office layout with comfortable ergonomic chairs. Although the space was occasionally a bit crowded, the atmosphere remained pleasant and never stifling.
 
 ---
 
-### Suggestions & Expectations
-- Do you have any suggestions to improve the internship experience?  
-- Would you like to continue this program in the future?  
-- Any other comments (free sharing):
+### Part 4: Retrospective & Suggestions
+
+**Key Takeaways**
+> *The most memorable (and painful) lesson: Every mistake on the Cloud costs actual money. Creating AWS services and forgetting to delete resources is a sure way to make your wallet "evaporate" in the blink of an eye.*
+
+**Areas for Improvement (Feedback)**
+* **Improvement:** The program should add a workshop on "Technical Writing," as I noticed many interns (including myself) are still weak in this area.
+* **Training:** I hope to have more in-depth sharing sessions on specific service techniques in future batches.
+
+**Final Thoughts**
+* Thank you, FCJ team, for giving me a memorable experience and wonderful colleagues!
