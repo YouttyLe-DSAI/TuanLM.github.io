@@ -2,124 +2,100 @@
 title: "Blog 2"
 weight: 1
 chapter: false
-pre: " <b> 3.2. </b> "
+pre: " <b> 3.2 </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+# **Migrating CDK Version 1 Applications to CDK Version 2 with Amazon Q Developer**
 
-# Getting Started with Healthcare Data Lakes: Using Microservices
+by Dr. Rahul Sharad Gaikwad, Tamilselvan P, and Vinodkumar Mandalapu on April 30, 2025 on [Amazon Q](https://aws.amazon.com/blogs/devops/category/amazon-q/).
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
+## **Introduction:**
 
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+[AWS Cloud Development Kit (AWS CDK)](https://aws.amazon.com/cdk/) is an open-source software development framework to define cloud infrastructure in code and provision it through [AWS CloudFormation](https://aws.amazon.com/cdk/). As of June 1, 2023, AWS CDK version 1 is no longer supported. To avoid potential issues using an outdated version and to take advantage of the latest features and improvements, we recommend upgrading to AWS CDK version 2.
 
----
+[Amazon Q Developer](https://aws.amazon.com/q/developer/), a generative AI-powered assistant for software development, enhances the efficiency of software development teams. It facilitates the creation of deployment-ready Infrastructure as Code (IaC) for AWS CloudFormation, AWS CDK, and Terraform. By using Amazon Q, developers can accelerate IaC development, enhance code quality, and reduce the likelihood of configuration errors.
 
-## Architecture Guidance
+This post demonstrates how [Amazon Q Developer](https://aws.amazon.com/q/developer/) supports upgrading an existing [AWS CDK v1](https://docs.aws.amazon.com/cdk/v1/guide/home.html) application to [AWS CDK v2](https://docs.aws.amazon.com/cdk/v1/guide/home.html).
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”
+## **Prerequisites**
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+*   [AWS Builder ID](https://docs.aws.amazon.com/signin/latest/userguide/sign-in-aws_builder_id.html) or [AWS IAM Identity Center](https://aws.amazon.com/iam/identity-center/) credentials controlled by your organization
 
-**The solution architecture is now as follows:**
+*   Supported IDE, such as Visual Studio Code
 
-> *Figure 1. Overall architecture; colored boxes represent distinct services.*
+*   [AWS Toolkit](https://aws.amazon.com/visualstudiocode/) IDE extension
 
----
+*   [Authentication and connection](https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/connect.html#whisperer)
 
-While the term *microservices* has some inherent ambiguity, certain traits are common:  
-- Small, autonomous, loosely coupled  
-- Reusable, communicating through well-defined interfaces  
-- Specialized to do one thing well  
-- Often implemented in an **event-driven architecture**
+*   Node.js
 
-When determining where to draw boundaries between microservices, consider:  
-- **Intrinsic**: technology used, performance, reliability, scalability  
-- **Extrinsic**: dependent functionality, rate of change, reusability  
-- **Human**: team ownership, managing *cognitive load*
+*   AWS CDK version 1
 
----
+*   AWS CDK version 2
 
-## Technology Choices and Communication Scope
+## **Plan**
 
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+In this blog post, I will explore a code example where I created a VPC, Subnet, and ECS Fargate cluster using AWS CDK version 1. Then, I will explain how you can use Amazon Q to convert the code from CDK v1 to CDK v2.
 
----
+1\. To start this process, I began by asking Amazon Q Developer to provide the necessary steps to migrate from CDK version 1 to version 2, as outlined below.
 
-## The Pub/Sub Hub
+Can you provide the steps to migrate from cdk version 1 to version 2?
 
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.  
-- Each microservice depends only on the *hub*  
-- Inter-microservice connections are limited to the contents of the published message  
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous *push*
+![Amazon Q Developer outlines a comprehensive process for upgrading an AWS CDK application from version 1 to version 2.](/images/3-BlogsTranslated/step1-b2.gif)
 
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
+2\. In the screenshot above, Amazon Q Developer outlined several steps we can take to make the necessary changes. The first step is to update dependencies. If I need guidance on how to update dependencies, I can ask Amazon Q Developer for help again by requesting steps related to updating dependencies as shown below.
 
----
+Can you provide the steps to update dependencies?
 
-## Core Microservice
+![Amazon Q Developer provides detailed, AI-powered guidance for upgrading project dependencies by analyzing the existing codebase, identifying outdated or deprecated libraries and frameworks, and recommending precise updates to ensure compatibility with newer language versions.](/images/3-BlogsTranslated/step2-b2.gif)
 
-Provides foundational data and communication layer, including:  
-- **Amazon S3** bucket for data  
-- **Amazon DynamoDB** for data catalog  
-- **AWS Lambda** to write messages into the data lake and catalog  
-- **Amazon SNS** topic as the *hub*  
-- **Amazon S3** bucket for artifacts such as Lambda code
+3\. After updating the dependencies, the next step is to update the import statements. For guidance on how to update import statements, I can ask the Amazon Q Developer assistant for help again by asking for steps related to how to import statements as shown below.
 
-> Only allow indirect write access to the data lake through a Lambda function → ensures consistency.
+@workspace Can you provide the steps to update import statements?
 
----
+![Amazon Q Developer advises on updating import statements by analyzing the current code context and guiding developers to replace old or outdated import paths with the latest ones.](/images/3-BlogsTranslated/step3-b3.gif)
 
-## Front Door Microservice
+In the screenshot above, if you notice, I prefixed the prompt with `@workspace`, which automatically includes the most relevant parts of my workspace code as context.
 
-- Provides an API Gateway for external REST interaction  
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**  
-- Self-managed *deduplication* mechanism using DynamoDB instead of SNS FIFO because:  
-  1. SNS deduplication TTL is only 5 minutes  
-  2. SNS FIFO requires SQS FIFO  
-  3. Ability to proactively notify the sender that the message is a duplicate  
+4\. If any errors occur while updating the code according to Amazon Q Developer's recommendations, I can use Amazon Q Developer to debug the issue and provide the necessary input to resolve it.
 
----
+![](/images/3-BlogsTranslated/step4-1-b2.gif)
 
-## Staging ER7 Microservice
+5\. After completing the required steps, I can deploy the application using AWS CDK version 2 by running the `cdk deploy` command.
 
-- Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 → JSON  
-- Two Lambdas:  
-  1. Fix ER7 formatting (newline, carriage return)  
-  2. Parsing logic  
-- Result or error is pushed back into the pub/sub hub  
+![Deploying the updated AWS CDK version 2 application, which involves synthesizing CDK stacks to generate CloudFormation templates and deployment artifacts, bootstrapping the AWS environment to provision necessary resources.](/images/3-BlogsTranslated/step5-b2.gif)
 
----
+6\. In addition to other capabilities, Amazon Q also offers code review functionality. To start a code review, simply select Amazon Q and use the `/review` command. Then, I will have the option to review active files or the entire open workspace. Select your preference and Amazon Q will analyze your project and provide comprehensive review results.
 
-## New Features in the Solution
+![](/images/3-BlogsTranslated/review-b2.gif)
 
-### 1. AWS CloudFormation Cross-Stack References
-Example *outputs* in the core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+7\. Amazon Q Developer can also generate documentation, including README files. To generate documentation, select Amazon Q and enter the `/doc` command. Amazon Q will automatically generate a README file for your project. I can then review the generated documentation, accept the changes, or provide specific instructions for further modifications.
+
+![](/images/3-BlogsTranslated/readme-b2.gif)
+
+## **Conclusion**
+
+In this blog, I demonstrated how Amazon Q Developer can simplify and accelerate the process of upgrading from AWS CDK version 1 to version 2, ensuring your cloud infrastructure remains secure, efficient, and aligned with the latest AWS innovations. AWS CDK version 2 offers a unified, streamlined library with improved performance and ongoing support, making infrastructure management easier and more reliable.
+
+By leveraging Amazon Q Developer, a generative AI-powered assistant, teams can automate Infrastructure as Code development, enhance code quality, and minimize configuration errors. Together, these tools empower development teams to confidently modernize and scale their AWS environments, turning the upgrade process into a seamless opportunity for innovation and growth.
+
+## **Resources**
+
+To learn more about [Amazon Q Developer](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html), check out the following resources:
+
+*   [Amazon Q Developer Workshop](https://catalog.workshops.aws/qwords/en-US)
+
+*   [Amazon Q Developer User Guide](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html)
+
+To learn more about AWS CDK, check out the following resources:
+
+*   [AWS CDK Workshop](https://workshops.aws/categories/CDK)
+
+*   [How to use Amazon Q Developer to deploy a serverless web application with AWS CDK](https://aws.amazon.com/blogs/devops/how-to-use-amazon-q-developer-to-deploy-a-serverless-web-application-with-aws-cdk/)
+
+About the authors:
+
+| Profile Photo | About the authors |
+| :---: | :--- |
+| <img src="/images/3-BlogsTranslated/Profile-Photo-10.jpg" width="220" alt="Dr. Rahul Sharad Gaikwad"> | **Dr. Rahul Sharad Gaikwad** is a Solutions Architect at AWS, driving cloud innovation through customer workload migration and modernization. As a Generative AI and DevOps enthusiast, he architects cutting-edge solutions and is recognized as an APJC HashiCorp Ambassador. He holds a PhD in AIOps and has received the Man of Excellence Award, Indian Achiever Award, Best PhD Thesis Award, Research Scholar of the Year Award, and Young Researcher Award. |
+| <img src="/images/3-BlogsTranslated/Vinod-123.jpg" width="220" alt="Vinodkumar Mandalapu"> | **Vinodkumar Mandalapu** is a DevOps Consultant at AWS, specializing in designing and deploying cloud-based infrastructure and deployment pipelines on AWS. With extensive experience in automating and streamlining software delivery, he has helped organizations of all sizes leverage the power of the cloud to drive innovation, improve scalability, and enhance operational efficiency. In his free time, he enjoys traveling and spending quality time with his son. |
+| <img src="/images/3-BlogsTranslated/Tamil-123.jpg" width="220" alt="Tamilselvan P"> | **Tamilselvan P** is a DevOps Consultant at AWS, focused on architecting and implementing cloud-native systems as well as continuous delivery within the ecosystem. Leveraging his comprehensive expertise in orchestrating and refining software release processes, he has assisted customers across various industries and scales in harnessing cloud technology to innovate faster, increase scalability, and enhance operational performance. In his free time, he enjoys playing cricket. |

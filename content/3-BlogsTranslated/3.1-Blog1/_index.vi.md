@@ -2,7 +2,7 @@
 title: "Blog 1"
 weight: 1
 chapter: false
-pre: " <b> 3.1. </b> "
+pre: " <b> 3.1 </b> "
 ---
 
 # **Tùy chỉnh mô hình, RAG, hay cả hai: Nghiên cứu điển hình với Amazon Nova**
