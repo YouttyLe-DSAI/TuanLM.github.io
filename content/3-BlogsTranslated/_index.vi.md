@@ -4,8 +4,6 @@ weight: 3
 chapter: false
 pre: " <b> 3 </b> "
 ---
-
-
 ###  [Blog 1 - Tùy chỉnh mô hình, RAG, hay cả hai: Nghiên cứu điển hình với Amazon Nova](3.1-Blog1/)
 Trong bối cảnh Generative AI phát triển mạnh mẽ, việc lựa chọn chiến lược tối ưu để nâng cao độ chính xác của mô hình ngôn ngữ lớn (LLM) cho các miền dữ liệu cụ thể là một thách thức lớn. Bài viết này thực hiện một nghiên cứu điển hình sử dụng các mô hình Amazon Nova để so sánh hiệu quả giữa ba phương pháp tiếp cận phổ biến: Tinh chỉnh mô hình (Fine-tuning), Thế hệ tăng cường truy xuất (RAG), và phương pháp Kết hợp (Hybrid). Thông qua các thử nghiệm thực tế trên bộ dữ liệu tài liệu AWS, bài viết phân tích sâu về hiệu suất, chi phí và độ phức tạp kỹ thuật, giúp các nhà phát triển và doanh nghiệp đưa ra quyết định sáng suốt nhất cho ứng dụng AI của mình.
 ###  [Blog 2 - Di chuyển ứng dụng CDK phiên bản 1 sang CDK phiên bản 2 với Amazon Q Developer](3.2-Blog2/)

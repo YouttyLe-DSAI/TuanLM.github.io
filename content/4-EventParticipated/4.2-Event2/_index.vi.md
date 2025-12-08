@@ -1,124 +1,60 @@
 ---
 title: "Event 2"
-weight: 1
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Workshop: Data Science on AWS
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+> **Thời gian:** 9:30 – 11:45, Ngày 16/10/2025 <br>
+> **Địa điểm:** Hall A - Đại học FPT TP.HCM (FPTU HCMC) <br>
+> **Vai trò:** Người tham dự
 
-### Mục Đích Của Sự Kiện
-
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+### Mục tiêu tham dự
+- Tìm hiểu về bức tranh toàn cảnh (Landscape) các dịch vụ AI/ML của AWS.
+- Tiếp cận cách xây dựng, huấn luyện và triển khai mô hình Machine Learning thực tế.
+- Giao lưu với các chuyên gia từ cộng đồng AWS User Group.
 
 ### Danh Sách Diễn Giả
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- Van Hoang Kha - Cloud Solutions Architect, AWS User Group Leader
+- Bach Doang Vuong - Cloud DevOps Engineer, AWS Community Builder
 
-### Nội Dung Nổi Bật
+### Nội dung chính
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+#### 1. Hệ sinh thái AWS AI/ML Stack
+Diễn giả đã giới thiệu cấu trúc 3 tầng của AWS AI/ML Stack rất rõ ràng:
+- **AI Services (Top layer):** Các dịch vụ có sẵn, không cần kiến thức sâu về ML vẫn dùng được (Vision, Speech, Chatbots...).
+- **ML Services (Middle layer):** Nền tảng Amazon SageMaker giúp xây dựng, huấn luyện và triển khai mô hình.
+- **Frameworks & Infrastructure (Bottom layer):** Dành cho chuyên gia muốn can thiệp sâu (PyTorch, TensorFlow, EC2 GPU...).
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+#### 2. Các AI Services nổi bật & Demo
+Phần này em thấy rất thú vị vì tính ứng dụng cao, có thể tích hợp ngay vào đồ án của sinh viên:
+- **Xử lý hình ảnh (Vision):** **Amazon Rekognition** giúp nhận diện gương mặt, phân tích video, phát hiện đồ bảo hộ (PPE Detection) và kiểm duyệt nội dung (Content Moderation).
+- **Xử lý âm thanh & giọng nói:** Combo **Amazon Polly** (chuyển văn bản thành giọng nói giống người thật) và **Amazon Transcribe** (chuyển giọng nói thành văn bản, hỗ trợ cả cuộc gọi thời gian thực).
+- **Xử lý ngôn ngữ tự nhiên (NLP):**
+    - **Amazon Translate:** Dịch thuật đa ngôn ngữ với độ trễ thấp.
+    - **Amazon Textract:** Bóc tách dữ liệu từ văn bản scan/hóa đơn cực nhanh.
+    - **Amazon Lex:** Xây dựng Chatbot hội thoại (Conversational Interfaces) thông minh.
+- **Cá nhân hóa trải nghiệm:** **Amazon Personalize** giúp tạo ra các đề xuất sản phẩm (recommendation) theo thời gian thực mà không cần chuyên môn sâu về ML.
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+#### 3. Quy trình Machine Learning với SageMaker
+Các diễn giả đã demo quy trình từ **Feature Engineering** (xử lý dữ liệu thô) đến Training và Tuning tham số. Đặc biệt là demo việc mang code Python (Scikit-learn, TensorFlow) có sẵn để chạy trên hạ tầng mạnh mẽ của AWS.
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+### Trải nghiệm cá nhân
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+Đây là một buổi workshop rất "sát sườn" với sinh viên tụi em.
+- Em rất ấn tượng phần chia sẻ về **Amazon Personalize**. Trước giờ em cứ nghĩ làm tính năng "Gợi ý sản phẩm" (Recommendation System) rất khó và tốn công code thuật toán, nhưng với AWS thì việc này đơn giản hơn rất nhiều.
+- Một điểm cộng lớn là diễn giả chia sẻ rất thực tế về vấn đề **Chi phí (Cost)**. Slide về "Monitoring Cost Daily" giúp em nhận ra rằng làm Cloud không chỉ là code chạy được, mà còn phải biết cách tối ưu để không bị "thủng ví" vào cuối tháng.
+- Không khí tại FPTU rất năng lượng, được nghe các anh đi trước chia sẻ kinh nghiệm thực chiến làm em có thêm động lực để học thi chứng chỉ AWS sắp tới.
 
-#### Domain-Driven Design (DDD)
+### Một số hình ảnh khi tham gia sự kiện
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+![event2-1](/images/4-event/event2-1.png)
 
-#### Event-Driven Architecture
+![event2-2](/images/4-event/event2-2.jpg)
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+![event2-2](/images/4-event/event2-3.png)
 
-#### Compute Evolution
-
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
-
-#### Amazon Q Developer
-
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
-
-### Những Gì Học Được
-
-#### Tư Duy Thiết Kế
-
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
-
-#### Kiến Trúc Kỹ Thuật
-
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
-
-#### Chiến Lược Hiện Đại Hóa
-
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
-
-### Ứng Dụng Vào Công Việc
-
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
-
-### Trải nghiệm trong event
-
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
-
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
-
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
-
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
-
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+> **Tóm lại:** Event này giúp em "khai sáng" rất nhiều về bộ công cụ AI Services. Thay vì tự build model từ con số 0, em đã biết cách tận dụng các API có sẵn của AWS để giải quyết bài toán nhanh hơn và xịn hơn.

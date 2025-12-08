@@ -5,120 +5,100 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Vietnam Cloud Day 2025: Ho Chi Minh City Connect Edition for Builders
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+> **Thời gian:** Thứ Năm, ngày 18/09/2025, 9:00 – 17:30 <br>
+> **Địa điểm:** Amazon Web Services Vietnam, Tầng 36, số 2 Hải Triều, Phường Bến Nghé, Quận 1, Thành phố Hồ Chí Minh <br>
+> **Vai trò:** Người tham dự
 
 ### Mục Đích Của Sự Kiện
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+- Cập nhật xu hướng công nghệ chiến lược hàng đầu: **Agentic AI**.
+- Tìm hiểu giải pháp xây dựng nền tảng dữ liệu (Data Foundation) để giải quyết vấn đề "Data Silos" mà 52% CDO đang gặp phải.
+- Tiếp cận quy trình phát triển phần mềm mới **AI-Driven Development Lifecycle (AI-DLC)**.
+- Nắm bắt các tiêu chuẩn bảo mật cho GenAI (MITRE ATLAS, OWASP, NIST) và các tầng rủi ro.
 
 ### Danh Sách Diễn Giả
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- Eric Yeo - Country General Manager, AWS Vietnam
+- Dr. Jens Lottner - CEO, Techcombank
+- Ms. Trang Phung - CEO & Co-Founder, U2U Network
+- Jaime Valles - VP, GM Asia Pacific and Japan, AWS
+- Jeff Johnson - Managing Director, ASEAN, AWS
+- Vu Van - Co-founder & CEO, ELSA Corp
+- Nguyen Hoa Binh - Chairman, Nexttech Group
+- Dieter Botha - CEO, TymeX
+- Jun Kai Loke - AI/ML Specialist SA, AWS
+- Kien Nguyen - Solutions Architect, AWS
+- Tamelly Lim - Storage Specialist SA, AWS
+- Binh Tran - Senior Solutions Architect, AWS
+- Taiki Dang - Solutions Architect, AWS
+- Michael Armentano - Principal WW GTM Specialist, AWS
+- Hung Nguyen Gia - Head of Solutions Architect, AWS
+- Son Do - Technical Account Manager, AWS
+- Nguyen Van Hai - Director of Software Engineering, Techcombank
+- Phuc Nguyen - Solutions Architect, AWS
+- Alex Tran - AI Director, OCB
+- Nguyen Minh Ngan - AI Specialist, OCB
+- Nguyen Manh Tuyen - Head of Data Application, LPBank Securities
+- Vinh Nguyen - Co-Founder & CTO, Ninety Eight
+- Hung Hoang - Customer Solutions Manager, AWS
+- Christal Poon - Specialist Solutions Architect, AWS
 
 ### Nội Dung Nổi Bật
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+#### 1. Xu hướng Agentic AI & Data Strategy
+- **Thực trạng:** 88% CDO đang tiến tới với GenAI, nhưng 52% cho rằng nền tảng dữ liệu chưa sẵn sàng.
+- **Thách thức:** Doanh nghiệp bị kìm hãm bởi 3 loại "Silos": Data Silos, People Silos, và Business Silos.
+- **Chiến lược dữ liệu:** Mô hình End-to-end từ Producers → Foundations → Consumers.
+    - **Hạ tầng:** Amazon S3 (Data Lakes), Amazon Redshift (Data Warehouses), hỗ trợ chuẩn mở Apache Iceberg.
+    - **Quản trị:** Amazon DataZone giúp quản trị dữ liệu và AI (Data & AI Governance).
+    - **Công cụ mới:** Giới thiệu **Unified Studio** tích hợp các công cụ analytics và AI.
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+#### 2. AI-Driven Development Lifecycle (AI-DLC)
+Speaker **Binh Tran** đã giới thiệu sự chuyển dịch từ *AI-Assisted* sang *AI-Driven Development*.
+Quy trình AI-DLC gồm 3 giai đoạn chính:
+1.  **Inception:** Build Context trên code hiện có, làm rõ ý định (User Stories), lên kế hoạch (Units of Work), mô hình hóa Domain.
+2.  **Construction:** AI tự sinh code & Test, bổ sung các thành phần kiến trúc.
+3.  **Operation:** Triển khai với IaC & tests, quản lý sự cố.
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+#### 3. Bảo mật GenAI (Security for GenAI)
+Speaker **Taiki Dang** nhấn mạnh bảo mật phải chạy song hành với Generative AI.
+- **Phân lớp rủi ro (Risks Layers):**
+    - *Top layer (Consumer):* Rủi ro về IP, pháp lý, ảo giác (Hallucination), an toàn.
+    - *Middle layer (Tuner):* Rủi ro từ Managed services, chính sách lưu trữ dữ liệu.
+    - *Bottom layer (Provider):* Rủi ro từ dữ liệu training.
+- **Framework & Tiêu chuẩn:** Áp dụng MITRE ATLAS, OWASP Top 10 for LLM, NIST AI RMF, ISO 42001.
+- **Giải pháp:** Sử dụng **Amazon Bedrock Guardrails** để ngăn chặn và giảm thiểu rủi ro (như toxicity, PII leak).
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
-
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
-
-#### Domain-Driven Design (DDD)
-
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
-
-#### Event-Driven Architecture
-
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
-
-#### Compute Evolution
-
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
-
-#### Amazon Q Developer
-
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+#### 4. Analytics & Business Intelligence
+Speaker **Christal Poon** giới thiệu về sự chuyển đổi từ Amazon QuickSight sang **Amazon Q**.
+- Tính năng tạo Dashboard, báo cáo và Data QA bằng ngôn ngữ tự nhiên.
+- **Sắp ra mắt tại Việt Nam:** Amazon Agentic AI Workbench (Quick Suite) với khả năng Quick Researcher và Quick Automate, đưa con người vào vòng lặp (Human in the loop) để kiểm soát.
 
 ### Những Gì Học Được
 
-#### Tư Duy Thiết Kế
-
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
-
-#### Kiến Trúc Kỹ Thuật
-
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
-
-#### Chiến Lược Hiện Đại Hóa
-
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+- **Tư duy về Agent:** Hiểu rõ cấu trúc của một AI Agent gồm: Goals → Observation → Tools → Context → Action.
+- **Kiến trúc Agent Core:** Cần đảm bảo đủ các thành phần: Runtime, Gateway, Memory, Observability và Identity để đưa Agent vào production một cách an toàn và mở rộng được.
+- **Bảo mật đa lớp:** Không chỉ bảo mật ứng dụng mà phải kiểm soát rủi ro từ dữ liệu training, quá trình fine-tuning cho đến người dùng cuối (Consumer risks).
 
 ### Ứng Dụng Vào Công Việc
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+- **Triển khai AI-DLC:** Thử nghiệm áp dụng quy trình 7 bước của AI-DLC vào dự án mới, bắt đầu từ việc dùng AI để "Build Context" và "Domain Modeling".
+- **Tăng cường bảo mật:** Rà soát lại ứng dụng GenAI hiện tại theo checklist của **OWASP Top 10 for LLM** và tích hợp **Bedrock Guardrails** để lọc nội dung độc hại.
+- **Modernize Data Stack:** Đánh giá khả năng chuyển đổi Data Warehouse hiện tại sang kiến trúc **Lakehouse** với Apache Iceberg trên AWS để phá vỡ các Data Silos.
 
-### Trải nghiệm trong event
+### Trải Nghiệm Cá Nhân
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+Sự kiện lần này thực sự đi sâu vào kỹ thuật (deep-dive) hơn em mong đợi, mang lại nhiều giá trị thực tiễn:
+- Em rất tâm đắc với phần chia sẻ về **AI-DLC** của anh Bình Trần. Nó thay đổi hoàn toàn cách em nhìn nhận về việc coding: developer không còn chỉ viết code mà trở thành người "kiến trúc" và "review" cho AI thực thi.
+- Slide về **Scoping Matrix** và các lớp rủi ro trong GenAI giúp em có cái nhìn hệ thống hơn để giải trình với bộ phận Security của công ty khi muốn triển khai dự án AI mới.
+- Rất hào hứng với thông tin **Amazon Agentic AI Workbench** sắp về Việt Nam, hứa hẹn sẽ giải quyết được bài toán tự động hóa quy trình nghiên cứu thị trường (Quick Researcher) mà team business đang cần.
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+### Một số hình ảnh khi tham gia sự kiện
 
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
+![event1-1](/images/4-event/event1-1.png)
 
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
+![event1-2](/images/4-event/event1-2.png)
 
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
-
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
-
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+> Tổng kết: Một sự kiện "must-attend" cho Builders. Kiến thức về Agentic AI và AI-DLC sẽ là kim chỉ nam cho lộ trình phát triển kỹ thuật của em trong năm tới.

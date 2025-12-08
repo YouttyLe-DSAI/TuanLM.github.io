@@ -62,18 +62,6 @@
                 href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/4-eventparticipated/4.1-event1/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/4-eventparticipated/4.2-event2/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/4-eventparticipated/4.2-event2/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/4-eventparticipated/4.2-event2/"
-                />
-  </url><url>
     <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/</loc>
     <xhtml:link
                 rel="alternate"
@@ -240,6 +228,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-s3-onprem/5.4.2-create-interface-enpoint/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/4-eventparticipated/4.2-event2/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/4-eventparticipated/4.2-event2/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/4-eventparticipated/4.2-event2/"
                 />
   </url><url>
     <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.2-prerequiste/</loc>
