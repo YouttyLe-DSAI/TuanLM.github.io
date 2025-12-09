@@ -1,5 +1,3 @@
-Here is the English translation for your content:
-
 ---
 title : "Overview"
 weight: 5
