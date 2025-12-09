@@ -7,7 +7,7 @@ pre: " <b> 6. </b> "
 
 During my internship at **AWS First Cloud Journey** from **September 4, 2025** to **December 09, 2025**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
 
-I directly participated in **building and deploying the Serverless architecture for the SorcererXtreme project**. Through this process, I gained specific experiences:
+I directly participated in **building and deploying the Serverless architecture for the Agreeme project**. Through this process, I gained specific experiences:
 * **Technical Skills:** Mastered the operation and integration of core AWS services (**AWS Lambda, API Gateway, DynamoDB**), practiced **Infrastructure as Code (IaC)** for infrastructure management, and built **CI/CD** pipelines for automated testing and deployment.
 * **Mindset:** Developed a mindset for designing scalable systems and began addressing Cloud Cost Optimization challenges.
 * **Soft Skills:** Honed effective **Teamwork** skills within an Agile/Scrum environment, along with transparent task management and progress reporting.
