@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Deploy Frontend (Amplify) on Internship Report</title>
-    <link>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.5-fullstack/5.5.2-frontend-amplify/</link>
+    <link>http://localhost:49213/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.5-fullstack/5.5.2-frontend-amplify/</link>
     <description>Recent content in Deploy Frontend (Amplify) on Internship Report</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.5-fullstack/5.5.2-frontend-amplify/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:49213/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.5-fullstack/5.5.2-frontend-amplify/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

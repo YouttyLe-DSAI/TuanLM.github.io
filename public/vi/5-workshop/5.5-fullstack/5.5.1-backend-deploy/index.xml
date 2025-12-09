@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Deploy Backend Serverless on Báo cáo thực tập</title>
-    <link>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.5-fullstack/5.5.1-backend-deploy/</link>
+    <link>http://localhost:49213/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.5-fullstack/5.5.1-backend-deploy/</link>
     <description>Recent content in Deploy Backend Serverless on Báo cáo thực tập</description>
     <generator>Hugo</generator>
     <language>vi</language>
-    <atom:link href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.5-fullstack/5.5.1-backend-deploy/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:49213/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.5-fullstack/5.5.1-backend-deploy/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
