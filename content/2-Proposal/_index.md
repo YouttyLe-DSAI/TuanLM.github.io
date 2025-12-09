@@ -5,16 +5,16 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-# AI Contract Intelligence Platform - AGREEME
+# Smart Contract Assistant - AGREEME
 
-## A Serverless AWS Solution for Personal Contract Review 
+## A Serverless AWS Solution for Contract Review 
 
 ### TEEJ - AGREEME
 ---
 
 ### 1. Executive Summary
 
-The AI Contract Intelligence Platform is a web-based service for individuals and small user groups (freelancers, small business owners, administrative/legal staff) who work with contracts daily but lack deep legal expertise. The solution uses Amazon Bedrock and a fully serverless AWS architecture to analyze contracts, highlight risks, suggest clause edits, and generate summaries and new contract templates.
+The Smart Contract Assistant - AGREEME is a web-based service for individuals and small user groups (freelancers, small business owners, administrative/legal staff) who work with contracts daily but lack deep legal expertise. The solution uses Amazon Bedrock and a fully serverless AWS architecture to analyze contracts, highlight risks, suggest clause edits, and generate summaries and new contract templates.
 
 Built on AWS Amplify, Lambda, API Gateway, DynamoDB, S3, Cognito, EventBridge, and CloudWatch, the platform delivers low-latency, low-cost, and secure AI-assisted contract review, optimized for single users or small teams without complex enterprise features.
 
@@ -22,11 +22,11 @@ Built on AWS Amplify, Lambda, API Gateway, DynamoDB, S3, Cognito, EventBridge, a
 
 ### 2. Problem Statement
 
-#### What’s the Problem?
+#### The Problem
 
-* Contracts are long, complex, and difficult to understand for non-lawyers.
+* Contracts are often long, complex, and difficult to understand for non-lawyers.
 * Hiring legal consultants for every contract is expensive and not scalable for individuals.
-* There is no simple, self-service tool focused on fast, accurate contract review for personal or small-business use.
+* A simple, self-service tool focused on fast, accurate contract review for personal or small-business use is not available.
 * Users do **not** want complex multi-tenant systems or heavy document management; they just want quick risk checks and clear guidance.
 
 #### The Solution
@@ -62,12 +62,12 @@ All of this runs on a serverless AWS architecture:
 * **Technical performance**
 
   * Contract analysis accuracy **≥ 85%** (internal tests + user feedback).
-  * Response time **≤ 5 seconds** after upload.
+  * Response time **≤ 8 seconds** after upload.
   * System uptime **≥ 99.9%** for individual users.
 
 * **Cost efficiency**
 
-  * Estimated AWS infra cost: **$27.90/month** → **$334.80/12 months**.
+  * Estimated AWS infra cost: **$27.91/month** → **$334.92/12 months**.
   * Implementation effort: **592 hours** total, ≈ **$637.12** in team cost (Solution Architect + Software Engineer + AI Engineer).
 
 ---
@@ -75,7 +75,7 @@ All of this runs on a serverless AWS architecture:
 ### 3. Solution Architecture
 
 The platform is implemented as a fully serverless, secure, and scalable architecture optimized for GenAI-driven document processing and RAG-based contract intelligence.
-![Architecture](/images/2-Proposal/1.png)
+![Architecture](1.png)
 
 #### High-Level Architecture
 
@@ -233,8 +233,10 @@ The platform is implemented as a fully serverless, secure, and scalable architec
 | AWS Amplify         | $16.25             | $195.00             |
 | Amazon CloudWatch   | $0.53              | $6.36               |
 | Amazon Bedrock      | $1.13              | $13.56              |
-| **Total**           | **$27.90/month**   | **$334.80/12 months** |
+| Amazon Lambda       | $0.01              | $0.12               |
+| **Total**           | **$27.91/month**   | **$334.92/12 months** |
 
+[AWS Pricing Calculator](https://calculator.aws/#/estimate?id=6af211cf355aa8c5fdea086c5c93f422e7345f19)
 ### Implementation Team Cost
 
 | Role               | Hourly Rate (USD) |
@@ -272,7 +274,7 @@ The platform is implemented as a fully serverless, secure, and scalable architec
 #### Technical Outcomes
 
 * Production-ready, serverless AI contract assistant for individuals/small teams.
-* Stable performance with **≤ 5s** analysis time and **≥ 99.9%** uptime.
+* Stable performance with **≤ 8 seconds** analysis time and **≥ 99.9%** uptime.
 * Secure handling of sensitive documents with encryption and least-privilege access.
 
 #### Business Outcomes

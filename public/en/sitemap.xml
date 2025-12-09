@@ -38,16 +38,16 @@
                 href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/3-blogstranslated/3.3-blog3/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.3-infrastructure/5.3.1-create-gwe/</loc>
+    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.3-infrastructure/5.3.1-amazon-s3-bucket/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.3-infrastructure/5.3.1-create-gwe/"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.3-infrastructure/5.3.1-amazon-s3-bucket/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.3-infrastructure/5.3.1-create-gwe/"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.3-infrastructure/5.3.1-amazon-s3-bucket/"
                 />
   </url><url>
     <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/4-eventparticipated/4.1-event1/</loc>
@@ -86,16 +86,16 @@
                 href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.1-workshop-overview/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-backed/5.4.1-prepare/</loc>
+    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-backed/5.4.1-rag-search/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.4-backed/5.4.1-prepare/"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.4-backed/5.4.1-rag-search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-backed/5.4.1-prepare/"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-backed/5.4.1-rag-search/"
                 />
   </url><url>
     <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/1-worklog/1.1-week1/</loc>
@@ -218,16 +218,16 @@
                 href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/1-worklog/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-backed/5.4.2-create-interface-enpoint/</loc>
+    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-backed/5.4.2-other-lambdas/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.4-backed/5.4.2-create-interface-enpoint/"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.4-backed/5.4.2-other-lambdas/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-backed/5.4.2-create-interface-enpoint/"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-backed/5.4.2-other-lambdas/"
                 />
   </url><url>
     <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/4-eventparticipated/4.2-event2/</loc>
@@ -266,16 +266,16 @@
                 href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/2-proposal/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.3-infrastructure/5.3.2-test-gwe/</loc>
+    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.3-infrastructure/5.3.2-dynamodb/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.3-infrastructure/5.3.2-test-gwe/"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.3-infrastructure/5.3.2-dynamodb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.3-infrastructure/5.3.2-test-gwe/"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.3-infrastructure/5.3.2-dynamodb/"
                 />
   </url><url>
     <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/1-worklog/1.10-week10/</loc>
@@ -338,16 +338,16 @@
                 href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/4-eventparticipated/4.3-event3/"
                 />
   </url><url>
-    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-backed/5.4.3-test-endpoint/</loc>
+    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-backed/5.4.3-api-secrets/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.4-backed/5.4.3-test-endpoint/"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.4-backed/5.4.3-api-secrets/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-backed/5.4.3-test-endpoint/"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-backed/5.4.3-api-secrets/"
                 />
   </url><url>
     <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/3-blogstranslated/</loc>
@@ -396,18 +396,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/4-eventparticipated/"
-                />
-  </url><url>
-    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-backed/5.4.4-dns-simulation/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.4-backed/5.4.4-dns-simulation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-backed/5.4.4-dns-simulation/"
                 />
   </url><url>
     <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/4-eventparticipated/4.5-event5/</loc>
@@ -480,6 +468,30 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/7-feedback/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.5-fullstack/5.5.1-backend-deploy/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.5-fullstack/5.5.1-backend-deploy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.5-fullstack/5.5.1-backend-deploy/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.5-fullstack/5.5.2-frontend-amplify/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.5-fullstack/5.5.2-frontend-amplify/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.5-fullstack/5.5.2-frontend-amplify/"
                 />
   </url><url>
     <loc>http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/categories/</loc>

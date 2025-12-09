@@ -1,20 +1,18 @@
 ---
-title : "Access S3 from on-premises"
-
+title : "Building the Backend (Lambda)"
 weight : 4
 chapter : false
 pre : " <b> 5.4. </b> "
 ---
 
-#### Overview
+### Introduction
 
-+ In this section, you will create an Interface endpoint to access Amazon S3 from a simulated on-premises environment. The Interface endpoint will allow you to route to Amazon S3 over a VPN connection from your simulated on-premises environment.
+In this section, we will build the core processing component (Backend) for the **Smart Contract Assistant** application. The system utilizes a Serverless architecture with **AWS Lambda** to handle user requests and interact with AI (Amazon Bedrock).
 
-+ Why using **Interface endpoint**: 
-    + Gateway endpoints only work with resources running in the VPC where they are created. Interface endpoints work with resources running in VPC, and also resources running in on-premises environments. Connectivty from your on-premises environment to the cloud can be provided by AWS Site-to-Site VPN or AWS Direct Connect.
-    + Interface endpoints allow you to connect to services powered by AWS PrivateLink. These services include some AWS services, services hosted by other AWS customers and partners in their own VPCs (referred to as PrivateLink Endpoint Services), and supported AWS Marketplace Partner services. For this workshop, we will focus on connecting to Amazon S3.
+### Key Components
 
-![Interface endpoint architecture](/images/5-Workshop/5.4-S3-onprem/diagram3.png)
+We will proceed through the following steps:
 
-
-
+1.  **[Create RAG Search Lambda](5.4.1-rag-search/)**: Build an intelligent search function that connects to vector data in S3.
+2.  **[Create Auxiliary Lambdas](5.4.2-other-lambdas/)**: Build the contract generation function (`generate_contract`) and the general chat function (`CallLLM`).
+3.  **[Configure API & Security](5.4.3-api-secrets/)**: Set up API Gateway to expose connection endpoints and Secrets Manager to store secret keys.

@@ -4,42 +4,42 @@ weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-# Nền tảng AI Contract Intelligence - AGREEME
+# Nền tảng Smart Contract Assistant - AGREEME
 
 ## Giải pháp AWS Serverless cho việc rà soát hợp đồng cá nhân 
 
 ### TEEJ - AGREEME
 ---
 
-### 1. Tóm tắt điều hành (Executive Summary)
+### 1. Tóm tắt (Executive Summary)
 
-Nền tảng AI Contract Intelligence là một dịch vụ web dành cho cá nhân và các nhóm người dùng nhỏ (freelancer, chủ doanh nghiệp nhỏ, nhân sự hành chính/pháp lý) làm việc với hợp đồng hằng ngày nhưng không có chuyên môn pháp lý sâu. Giải pháp sử dụng Amazon Bedrock và kiến trúc AWS serverless hoàn toàn để phân tích hợp đồng, làm nổi bật rủi ro, gợi ý chỉnh sửa điều khoản, và tạo tóm tắt cũng như mẫu hợp đồng mới.
+Nền tảng Smart Contract Assistant - AGREEME là một dịch vụ web dành cho cá nhân và các nhóm người dùng nhỏ (freelancer, chủ doanh nghiệp nhỏ, nhân viên văn phòng) làm việc với hợp đồng hằng ngày nhưng không có chuyên môn pháp lý sâu. Giải pháp sử dụng Amazon Bedrock và kiến trúc AWS serverless hoàn toàn để phân tích hợp đồng, làm nổi bật rủi ro, gợi ý chỉnh sửa điều khoản, và tạo tóm tắt cũng như mẫu hợp đồng mới.
 
 Được xây dựng trên AWS Amplify, Lambda, API Gateway, DynamoDB, S3, Cognito, EventBridge và CloudWatch, nền tảng cung cấp khả năng rà soát hợp đồng bằng AI với độ trễ thấp, chi phí thấp và bảo mật cao, được tối ưu cho người dùng đơn lẻ hoặc các nhóm nhỏ mà không cần tính năng phức tạp như hệ thống doanh nghiệp.
 
 ---
 
-### 2. Vấn đề đặt ra (Problem Statement)
+### 2. Vấn đề và giải pháp (Problem Statement)
 
-#### Vấn đề là gì?
+#### Vấn đề
 
-* Hợp đồng thường dài, phức tạp và khó hiểu đối với người không có chuyên môn luật.
-* Việc thuê tư vấn pháp lý cho mỗi hợp đồng tốn kém và không phù hợp để mở rộng cho cá nhân.
-* Hiện chưa có công cụ tự phục vụ, đơn giản, tập trung vào việc rà soát hợp đồng nhanh và chính xác cho mục đích cá nhân hoặc doanh nghiệp nhỏ.
-* Người dùng **không** muốn các hệ thống multi-tenant phức tạp hay nền tảng quản lý tài liệu nặng nề; họ chỉ cần kiểm tra rủi ro nhanh và hướng dẫn rõ ràng.
+* Hợp đồng thường dài, phức tạp và khó hiểu đối với người không có chuyên môn về luật pháp.
+* Việc thuê tư vấn pháp lý cho mỗi hợp đồng tốn kém và không phù hợp để mở rộng cho các cá nhân.
+* Hiện tại vẫn chưa có công cụ tự phục vụ, đơn giản, tập trung vào việc rà soát hợp đồng nhanh và chính xác cho mục đích cá nhân hoặc các doanh nghiệp nhỏ.
+* Người dùng cá nhân hoặc các doanh nghiệp nhỏ không có nhu cầu sử dụng các hệ thống phức tạp hay nền tảng quản lý tài liệu nặng nề; họ chỉ cần kiểm tra rủi ro nhanh với các chỉ dẫn rõ ràng.
 
 #### Giải pháp
 
-Nền tảng cung cấp một web app sử dụng AI, nơi người dùng có thể upload file hợp đồng (PDF/DOCX) và nhận được:
+Nền tảng AGREEME cung cấp một web app sử dụng mô hình AI, nơi người dùng có thể upload file hợp đồng (PDF/DOCX) và nhận được:
 
-* Giải thích các điều khoản phức tạp bằng ngôn ngữ đơn giản, dễ hiểu.
+* Giải thích về các điều khoản phức tạp bằng ngôn ngữ đơn giản, dễ hiểu.
 * Ngữ cảnh pháp lý với việc đánh dấu các điều khoản có lợi/không có lợi.
 * Phát hiện rủi ro và cảnh báo (điều khoản mất cân bằng, nghĩa vụ ẩn, vấn đề pháp lý tiềm ẩn).
 * Gợi ý chỉnh sửa và câu chữ thay thế ở cấp độ điều khoản để phục vụ đàm phán.
 * Bản tóm tắt điều hành (executive summary) tự động cho người dùng bận rộn.
 * Khả năng tạo hợp đồng đơn giản từ mẫu (thuê nhà, mua bán, dịch vụ, v.v.) với các điều chỉnh dựa trên tình huống thực tế được AI hỗ trợ.
 
-Tất cả được vận hành trên kiến trúc AWS serverless:
+Tất cả được vận hành trên kiến trúc AWS Serverless:
 
 * **Frontend** trên AWS Amplify với Hosting, CDN và WAF tích hợp.
 * **APIs & compute** thông qua Amazon API Gateway và AWS Lambda.
@@ -61,12 +61,12 @@ Tất cả được vận hành trên kiến trúc AWS serverless:
 * **Hiệu năng kỹ thuật**
 
   * Độ chính xác phân tích hợp đồng **≥ 85%** (theo kiểm thử nội bộ và phản hồi người dùng).
-  * Thời gian phản hồi **≤ 5 giây** sau khi upload.
+  * Thời gian phản hồi **≤ 8 giây** sau khi upload.
   * Tỷ lệ uptime hệ thống **≥ 99.9%** cho người dùng cá nhân.
 
 * **Hiệu quả chi phí**
 
-  * Chi phí hạ tầng AWS ước tính: **$27.90/tháng** → **$334.80/12 tháng**.
+  * Chi phí hạ tầng AWS ước tính: **$27.91/tháng** → **$334.92/12 tháng**.
   * Nỗ lực triển khai: tổng **592 giờ**, ≈ **$637.12** cho chi phí nhân sự (Solution Architect + Software Engineer + AI Engineer).
 
 ---
@@ -74,7 +74,7 @@ Tất cả được vận hành trên kiến trúc AWS serverless:
 ### 3. Kiến trúc giải pháp (Solution Architecture)
 
 Nền tảng được triển khai dưới dạng kiến trúc serverless hoàn toàn, bảo mật và có khả năng mở rộng, được tối ưu cho xử lý tài liệu bằng GenAI và phân tích hợp đồng dựa trên RAG.
-![Architecture](/images/2-Proposal/1.png)
+![Architecture](1.png)
 
 #### Kiến trúc tổng thể (High-Level Architecture)
 
@@ -93,7 +93,6 @@ Nền tảng được triển khai dưới dạng kiến trúc serverless hoàn 
 
   * Core API Lambda để điều phối các yêu cầu từ API Gateway.
   * Các Lambda chuyên biệt cho:
-
     * Tạo hợp đồng (ContractGen).
     * Gọi LLM tổng quát (tóm tắt, phân loại, chuyển đổi).
     * Tìm kiếm RAG (truy xuất dựa trên embedding và tra cứu tri thức).
@@ -103,14 +102,13 @@ Nền tảng được triển khai dưới dạng kiến trúc serverless hoàn 
 * **Tầng AI & LLM**
 
   * Amazon Bedrock dùng cho:
-
     * Phân tích hợp đồng (tóm tắt, rủi ro, phân loại điều khoản).
     * Embeddings và RAG trên kho văn bản pháp luật và các template.
     * Tạo hợp đồng và gợi ý viết lại điều khoản.
 
 * **Dữ liệu & Lưu trữ (Data & Storage)**
 
-  * Amazon S3 lưu hợp đồng người dùng upload, tài liệu sinh ra và template.
+  * Amazon S3 lưu hợp đồng người dùng upload, tài liệu sinh ra và các mẫu hợp đồng, văn bản pháp luật thô.
   * Amazon DynamoDB lưu metadata, template, và chỉ mục RAG.
   * AWS KMS mã hóa dữ liệu lưu trữ cho S3, DynamoDB và secrets.
 
@@ -196,7 +194,7 @@ Nền tảng được triển khai dưới dạng kiến trúc serverless hoàn 
 #### Yêu cầu kỹ thuật (Technical Requirements)
 
 * Thành thạo AWS Amplify, Lambda, API Gateway, Cognito, S3, DynamoDB, EventBridge, CloudWatch.
-* Có quyền truy cập Amazon Bedrock (Claude, Llama, Titan, v.v.) để phân tích văn bản pháp lý.
+* Có quyền truy cập Amazon Bedrock (Claude, Cohere, v.v.) để phân tích văn bản pháp lý.
 * Thư viện xử lý file để trích xuất nội dung PDF/DOCX.
 * Chính sách xử lý dữ liệu và quyền riêng tư rõ ràng cho tài liệu hợp đồng nhạy cảm.
 
@@ -232,7 +230,10 @@ Nền tảng được triển khai dưới dạng kiến trúc serverless hoàn 
 | AWS Amplify         | $16.25             | $195.00             |
 | Amazon CloudWatch   | $0.53              | $6.36               |
 | Amazon Bedrock      | $1.13              | $13.56              |
-| **Total**           | **$27.90/month**   | **$334.80/12 months** |
+| Amazon Lambda       | $0.01              | $0.12               |
+| **Total**           | **$27.91/month**   | **$334.92/12 months** |
+
+[AWS Pricing Calculator](https://calculator.aws/#/estimate?id=6af211cf355aa8c5fdea086c5c93f422e7345f19)
 
 ### Implementation Team Cost
 
@@ -270,8 +271,8 @@ Nền tảng được triển khai dưới dạng kiến trúc serverless hoàn 
 
 #### Kết quả kỹ thuật (Technical Outcomes)
 
-* Trợ lý hợp đồng AI dạng serverless, sẵn sàng production cho cá nhân/nhóm nhỏ.
-* Hiệu năng ổn định với thời gian phân tích **≤ 5 giây** và uptime **≥ 99.9%**.
+* Trợ lý AI dạng serverless, sẵn sàng production cho cá nhân/nhóm nhỏ.
+* Hiệu năng ổn định với thời gian phân tích **≤ 8 giây** và uptime **≥ 99.9%**.
 * Xử lý tài liệu nhạy cảm một cách an toàn với mã hóa và phân quyền tối thiểu.
 
 #### Kết quả kinh doanh (Business Outcomes)

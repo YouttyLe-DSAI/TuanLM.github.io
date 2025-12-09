@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html lang="vi" class="js csstransforms3d">
+  <head><script src="/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.150.0">
+    <meta
+  name="description"
+  content=""
+/>
+<meta name="author" content="thienlh@thienlu.com" />
+
+    <link rel="icon" href="../../../../images/favicon.png" type="image/png">
+
+    <title>Tạo Lambda RAG Search :: Báo cáo thực tập</title>
+
+    
+    <link href="../../../../css/nucleus.css?1765271000" rel="stylesheet">
+    <link href="../../../../css/fontawesome-all.min.css?1765271000" rel="stylesheet">
+    <link href="../../../../css/hybrid.css?1765271000" rel="stylesheet">
+    <link href="../../../../css/featherlight.min.css?1765271000" rel="stylesheet">
+    <link href="../../../../css/perfect-scrollbar.min.css?1765271000" rel="stylesheet">
+    <link href="../../../../css/auto-complete.css?1765271000" rel="stylesheet">
+    <link href="../../../../css/atom-one-dark-reasonable.css?1765271000" rel="stylesheet">
+    <link href="../../../../css/theme.css?1765271000" rel="stylesheet">
+    <link href="../../../../css/hugo-theme.css?1765271000" rel="stylesheet">
+    
+    <link href="../../../../css/theme-workshop.css?1765271000" rel="stylesheet">
+    
+    
+
+    <script src="../../../../js/jquery-3.3.1.min.js?1765271000"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+
+  </head>
+  <body class="" data-url="../../../../vi/5-workshop/5.4-backed/5.4.1-rag-search/">
+    <nav
+  id="sidebar"
+  class="showVisitedLinks"
+>
+   
+  <div id="header-wrapper">
+    <div id="header"><a id="logo" href="../../../../">
+  <svg
+    id="Layer_1"
+    data-name="Layer 1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 60 30"
+    width="30%"
+  >
+    <defs>
+      <style>
+        .cls-1 {
+          fill: #fff;
+        }
+        .cls-2 {
+          fill: #f90;
+          fill-rule: evenodd;
+        }
+      </style>
+    </defs>
+    <title>AWS-Logo_White-Color</title>
+    <path
+      class="cls-1"
+      d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"
+    ></path>
+    <path
+      class="cls-2"
+      d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"
+    ></path>
+    <path
+      class="cls-2"
+      d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"
+    ></path>
+  </svg>
+</a>
+</div>
+     <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../../../../js/lunr.min.js?1765271000"></script>
+<script type="text/javascript" src="../../../../js/auto-complete.js?1765271000"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/localhost:1313\/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo\/\/vi";
+    
+</script>
+<script type="text/javascript" src="../../../../js/search.js?1765271000"></script>
+ 
+  </div>
+
+  <div class="highlightable">
+    <ul class="topics">
+               
+<li
+  data-nav-id="/vi/1-worklog/"
+  title="Nhật ký công việc"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/1-worklog/">
+     <b> 1. </b> Nhật ký công việc 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/vi/1-worklog/1.1-week1/"
+  title="Worklog Tuần 1"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/1-worklog/1.1-week1/">
+     <b> 1.1. </b> Worklog Tuần 1 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/1-worklog/1.2-week2/"
+  title="Worklog Tuần 2"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/1-worklog/1.2-week2/">
+     <b> 1.2. </b> Worklog Tuần 2 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/1-worklog/1.3-week3/"
+  title="Worklog Tuần 3"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/1-worklog/1.3-week3/">
+     <b> 1.3. </b> Worklog Tuần 3 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/1-worklog/1.4-week4/"
+  title="Worklog Tuần 4"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/1-worklog/1.4-week4/">
+     <b> 1.4. </b> Worklog Tuần 4 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/1-worklog/1.5-week5/"
+  title="Worklog Tuần 5"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/1-worklog/1.5-week5/">
+     <b> 1.5. </b> Worklog Tuần 5 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/1-worklog/1.6-week6/"
+  title="Worklog Tuần 6"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/1-worklog/1.6-week6/">
+     <b> 1.6. </b> Worklog Tuần 6 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/1-worklog/1.7-week7/"
+  title="Worklog Tuần 7"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/1-worklog/1.7-week7/">
+     <b> 1.7. </b> Worklog Tuần 7 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/1-worklog/1.8-week8/"
+  title="Worklog Tuần 8"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/1-worklog/1.8-week8/">
+     <b> 1.8. </b> Worklog Tuần 8 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/1-worklog/1.9-week9/"
+  title="Worklog Tuần 9"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/1-worklog/1.9-week9/">
+     <b> 1.9. </b> Worklog Tuần 9 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/1-worklog/1.10-week10/"
+  title="Worklog Tuần 10"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/1-worklog/1.10-week10/">
+     <b> 1.10. </b> Worklog Tuần 10 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/1-worklog/1.11-week11/"
+  title="Worklog Tuần 11"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/1-worklog/1.11-week11/">
+     <b> 1.11. </b> Worklog Tuần 11 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/1-worklog/1.12-week12/"
+  title="Worklog Tuần 12"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/1-worklog/1.12-week12/">
+     <b> 1.12 </b> Worklog Tuần 12 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+           
+<li
+  data-nav-id="/vi/2-proposal/"
+  title="Bản đề xuất"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/2-proposal/">
+     <b> 2. </b> Bản đề xuất 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+           
+<li
+  data-nav-id="/vi/3-blogstranslated/"
+  title="Các bài blogs đã dịch"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/3-blogstranslated/">
+     <b> 3 </b> Các bài blogs đã dịch 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/vi/3-blogstranslated/3.1-blog1/"
+  title="Blog 1"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/3-blogstranslated/3.1-blog1/">
+     <b> 3.1 </b> Blog 1 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/3-blogstranslated/3.2-blog2/"
+  title="Blog 2"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/3-blogstranslated/3.2-blog2/">
+     <b> 3.2 </b> Blog 2 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/3-blogstranslated/3.3-blog3/"
+  title="Blog 3"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/3-blogstranslated/3.3-blog3/">
+     <b> 3.3 </b> Blog 3 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+           
+<li
+  data-nav-id="/vi/4-eventparticipated/"
+  title="Các events đã tham gia"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/4-eventparticipated/">
+     <b> 4. </b> Các events đã tham gia 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/vi/4-eventparticipated/4.1-event1/"
+  title="Event 1"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/4-eventparticipated/4.1-event1/">
+     <b> 4.1. </b> Event 1 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/4-eventparticipated/4.2-event2/"
+  title="Event 2"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/4-eventparticipated/4.2-event2/">
+     <b> 4.2. </b> Event 2 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/4-eventparticipated/4.3-event3/"
+  title="Event 3"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/4-eventparticipated/4.3-event3/">
+     <b> 4.3. </b> Event 3 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/4-eventparticipated/4.4-event4/"
+  title="Event 4"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/4-eventparticipated/4.4-event4/">
+     <b> 4.4. </b> Event 4 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/4-eventparticipated/4.5-event5/"
+  title="Event 5"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/4-eventparticipated/4.5-event5/">
+     <b> 4.5. </b> Event 5 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+           
+<li
+  data-nav-id="/vi/5-workshop/"
+  title="Tổng quan"
+  class="dd-item 
+        parent
+        
+        
+        "
+>
+  <a href="../../../../vi/5-workshop/">
+     <b> 5. </b> Tổng quan 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/vi/5-workshop/5.1-workshop-overview/"
+  title="Tổng quan"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/5-workshop/5.1-workshop-overview/">
+     <b> 5.1 </b> Tổng quan 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/5-workshop/5.2-prerequiste/"
+  title="Các bước chuẩn bị"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/5-workshop/5.2-prerequiste/">
+     <b> 5.2 </b> Các bước chuẩn bị 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/5-workshop/5.3-infrastructure/"
+  title="Thiết lập cơ sở hạ tầng"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/5-workshop/5.3-infrastructure/">
+     <b> 5.3. </b> Thiết lập cơ sở hạ tầng 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/vi/5-workshop/5.3-infrastructure/5.3.1-amazon-s3-bucket/"
+  title="Tạo Amazon S3 Bucket"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/5-workshop/5.3-infrastructure/5.3.1-amazon-s3-bucket/">
+     <b> 5.3.1. </b> Tạo Amazon S3 Bucket 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/5-workshop/5.3-infrastructure/5.3.2-dynamodb/"
+  title="Tạo bảng DynamoDB"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/5-workshop/5.3-infrastructure/5.3.2-dynamodb/">
+     <b> 5.3.2. </b> Tạo bảng DynamoDB 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+    
+            
+<li
+  data-nav-id="/vi/5-workshop/5.4-backed/"
+  title="Xây dựng Backend (Lambda)"
+  class="dd-item 
+        parent
+        
+        
+        "
+>
+  <a href="../../../../vi/5-workshop/5.4-backed/">
+     <b> 5.4. </b> Xây dựng Backend (Lambda) 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/vi/5-workshop/5.4-backed/5.4.1-rag-search/"
+  title="Tạo Lambda RAG Search"
+  class="dd-item 
+        
+        active
+        
+        "
+>
+  <a href="../../../../vi/5-workshop/5.4-backed/5.4.1-rag-search/">
+     <b> 5.4.1. </b> Tạo Lambda RAG Search 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/5-workshop/5.4-backed/5.4.2-other-lambdas/"
+  title="Tạo các Lambda phụ trợ"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/5-workshop/5.4-backed/5.4.2-other-lambdas/">
+     <b> 5.4.2. </b> Tạo các Lambda phụ trợ 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/5-workshop/5.4-backed/5.4.3-api-secrets/"
+  title="API Gateway &amp; Secrets"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/5-workshop/5.4-backed/5.4.3-api-secrets/">
+     <b> 5.4.3. </b> API Gateway &amp; Secrets 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+    
+            
+<li
+  data-nav-id="/vi/5-workshop/5.5-fullstack/"
+  title="Triển khai Fullstack"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/5-workshop/5.5-fullstack/">
+     <b> 5.5. </b> Triển khai Fullstack 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/vi/5-workshop/5.5-fullstack/5.5.1-backend-deploy/"
+  title="Deploy Backend Serverless"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/5-workshop/5.5-fullstack/5.5.1-backend-deploy/">
+     <b> 5.5.1. </b> Deploy Backend Serverless 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/5-workshop/5.5-fullstack/5.5.2-frontend-amplify/"
+  title="Deploy Frontend (Amplify)"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/5-workshop/5.5-fullstack/5.5.2-frontend-amplify/">
+     <b> 5.5.2. </b> Deploy Frontend (Amplify) 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+    
+            
+<li
+  data-nav-id="/vi/5-workshop/5.6-cleanup/"
+  title="Dọn dẹp tài nguyên"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/5-workshop/5.6-cleanup/">
+     <b> 5.6. </b> Dọn dẹp tài nguyên 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+     
+  </ul>
+  
+</li>
+           
+<li
+  data-nav-id="/vi/6-self-evaluation/"
+  title="Tự đánh giá"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/6-self-evaluation/">
+     <b> 6. </b> Tự đánh giá 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+           
+<li
+  data-nav-id="/vi/7-feedback/"
+  title="Chia sẻ, đóng góp ý kiến"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="../../../../vi/7-feedback/">
+     <b> 7. </b> Chia sẻ, đóng góp ý kiến 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+    </ul>
+
+     
+    <section id="shortcuts">
+      <h3>
+        More
+      </h3>
+      <ul>
+        
+        <li>
+          <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"
+            ><i class='fab fa-facebook'></i> AWS Study Group</a
+          >
+        </li>
+        
+      </ul>
+    </section>
+     
+    <section id="prefooter">
+      <hr />
+      <ul>
+        
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+            <div class="select-style">
+              <select id="select-language" onchange="location = this.value;">
+                       
+                <option
+                  id="en"
+                  value="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/5-workshop/5.4-backed/5.4.1-rag-search/"
+                >
+                  English
+                </option>
+                            
+                <option
+                  id="vi"
+                  value="http://localhost:1313/Le-Minh-Tuan-FCJ-AWS-FA25-Hugo/vi/5-workshop/5.4-backed/5.4.1-rag-search/"
+                  selected
+                >
+                  Tiếng Việt
+                </option>
+                   
+              </select>
+              <svg
+                version="1.1"
+                id="Capa_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                width="255px"
+                height="255px"
+                viewBox="0 0 255 255"
+                style="enable-background: new 0 0 255 255"
+                xml:space="preserve"
+              >
+                <g>
+                  <g id="arrow-drop-down">
+                    <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </a>
+        </li>
+         
+        <li>
+          <a class="padding" href="#" data-clear-history-toggle=""
+            ><i class="fas fa-history fa-fw"></i> Clear History</a
+          >
+        </li>
+        
+      </ul>
+    </section>
+    
+    <section id="footer"><left>
+    
+    <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0"
+        title="Migrate" Alt="web counter" border="0" /></a> <br>
+    <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0"
+        title="Total CLoud Journey" Alt="web counter" border="0" />
+
+</left>
+<left>
+    <br>
+    <br>
+    <b>Last Updated</b><br>
+    <i>
+        <span id="lastUpdated" style="color:orange;"></span>
+    </i>
+
+    <script>
+        
+        const today = new Date();
+        
+        const formattedDate = today.toLocaleDateString('en-GB');
+        
+        document.getElementById('lastUpdated').textContent = formattedDate;
+    </script>
+</left>
+<left>
+    <br>
+    <br>
+    <b> Team </b> <br>
+
+    <i> <a href="https://www.facebook.com/groups/660548818043427" style="color:orange">First Cloud Journey </a> <br>
+
+    </i>
+</left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script></section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='../../../../vi/'>Báo cáo thực tập</a> > <a href='../../../../vi/5-workshop/'>Tổng quan</a> > <a href='../../../../vi/5-workshop/5.4-backed/'>Xây dựng Backend (Lambda)</a> > Tạo Lambda RAG Search
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+  <div class="wrapper"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Tạo Lambda RAG Search
+            </h1>
+          
+
+        
+
+
+
+	<p>Hàm <code>ragsearch</code> là thành phần quan trọng nhất, chịu trách nhiệm tìm kiếm dữ liệu pháp lý và trả lời câu hỏi.</p>
+<h4 id="1-khởi-tạo-function">1. Khởi tạo Function</h4>
+<ol>
+<li>Truy cập dịch vụ <strong>Lambda</strong> -&gt; Chọn <strong>Create function</strong>.</li>
+<li>Chọn <strong>Author from scratch</strong>.</li>
+<li>Điền các thông tin cơ bản:
+<ul>
+<li><strong>Function name</strong>: <code>ragsearch</code></li>
+<li><strong>Runtime</strong>: <code>Python 3.12</code></li>
+<li><strong>Architecture</strong>: <code>x86_64</code></li>
+</ul>
+</li>
+<li>Bấm <strong>Create function</strong>.</li>
+</ol>
+<p><img src="../../../../images/5-Workshop/5.3-Infrastructure/3.14.png" alt="alt text"></p>
+<h4 id="2-cập-nhật-code">2. Cập nhật Code</h4>
+<ol>
+<li>Tại tab <strong>Code</strong>, mở file <code>lambda_function.py</code>.</li>
+<li>Xóa hết nội dung mặc định.</li>
+<li>Mở file <code>ragsearch.py</code> trong thư mục source code, copy toàn bộ nội dung và dán vào cửa sổ code trên AWS Console.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> math
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> logging
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> List, Dict, Any, Tuple
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> boto3
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> botocore.exceptions <span style="color:#f92672">import</span> ClientError
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>logger <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>getLogger()
+</span></span><span style="display:flex;"><span>logger<span style="color:#f92672">.</span>setLevel(logging<span style="color:#f92672">.</span>INFO)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------------------------------------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Config</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------------------------------------------------------</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>AWS_REGION <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#34;AWS_REGION&#34;</span>, <span style="color:#e6db74">&#34;ap-southeast-1&#34;</span>)
+</span></span><span style="display:flex;"><span>EMBED_MODEL_ID <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#34;EMBED_MODEL_ID&#34;</span>, <span style="color:#e6db74">&#34;cohere.embed-multilingual-v3&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>LEGAL_INDEX_BUCKET <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#34;LEGAL_INDEX_BUCKET&#34;</span>)  <span style="color:#75715e"># tên của bucket S3</span>
+</span></span><span style="display:flex;"><span>LEGAL_INDEX_KEY <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#34;LEGAL_INDEX_KEY&#34;</span>, <span style="color:#e6db74">&#34;index/legal_chunks_with_emb.jsonl&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> LEGAL_INDEX_BUCKET:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">RuntimeError</span>(<span style="color:#e6db74">&#34;LEGAL_INDEX_BUCKET env var is required&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>s3 <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>client(<span style="color:#e6db74">&#34;s3&#34;</span>, region_name<span style="color:#f92672">=</span>AWS_REGION)
+</span></span><span style="display:flex;"><span>bedrock <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>client(<span style="color:#e6db74">&#34;bedrock-runtime&#34;</span>, region_name<span style="color:#f92672">=</span>AWS_REGION)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------------------------------------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Global cache</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------------------------------------------------------</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>INDEX_CACHE <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;loaded&#34;</span>: <span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;chunks&#34;</span>: [],   <span style="color:#75715e"># list of dict (metadata + text, no embedding)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;vectors&#34;</span>: []   <span style="color:#75715e"># list of list[float]</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------------------------------------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Helpers</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------------------------------------------------------</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">cosine_similarity</span>(a: List[float], b: List[float]) <span style="color:#f92672">-&gt;</span> float:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> a <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> b <span style="color:#f92672">or</span> len(a) <span style="color:#f92672">!=</span> len(b):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>    dot <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>    na <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>    nb <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> x, y <span style="color:#f92672">in</span> zip(a, b):
+</span></span><span style="display:flex;"><span>        dot <span style="color:#f92672">+=</span> x <span style="color:#f92672">*</span> y
+</span></span><span style="display:flex;"><span>        na <span style="color:#f92672">+=</span> x <span style="color:#f92672">*</span> x
+</span></span><span style="display:flex;"><span>        nb <span style="color:#f92672">+=</span> y <span style="color:#f92672">*</span> y
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> na <span style="color:#f92672">==</span> <span style="color:#ae81ff">0.0</span> <span style="color:#f92672">or</span> nb <span style="color:#f92672">==</span> <span style="color:#ae81ff">0.0</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0.0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> dot <span style="color:#f92672">/</span> math<span style="color:#f92672">.</span>sqrt(na <span style="color:#f92672">*</span> nb)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_embedding</span>(text: str) <span style="color:#f92672">-&gt;</span> List[float]:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> text <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> text<span style="color:#f92672">.</span>strip():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;Query text is empty&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    model_id <span style="color:#f92672">=</span> EMBED_MODEL_ID
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Nếu là Cohere Embed v3 (english/multilingual)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> model_id<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#34;cohere.embed-&#34;</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Query → dùng search_query</span>
+</span></span><span style="display:flex;"><span>        body_dict <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;texts&#34;</span>: [text],
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;input_type&#34;</span>: <span style="color:#e6db74">&#34;search_query&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Có thể thêm &#34;truncate&#34;: &#34;END&#34; nếu cần</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Mặc định: Titan embeddings</span>
+</span></span><span style="display:flex;"><span>        body_dict <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;inputText&#34;</span>: text
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    body <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>dumps(body_dict)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> bedrock<span style="color:#f92672">.</span>invoke_model(
+</span></span><span style="display:flex;"><span>            modelId<span style="color:#f92672">=</span>model_id,
+</span></span><span style="display:flex;"><span>            body<span style="color:#f92672">=</span>body,
+</span></span><span style="display:flex;"><span>            contentType<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;application/json&#34;</span>,
+</span></span><span style="display:flex;"><span>            accept<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;application/json&#34;</span>,
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> ClientError <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">&#34;Bedrock invoke_model failed: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span>, e)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    response_body <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(response[<span style="color:#e6db74">&#34;body&#34;</span>]<span style="color:#f92672">.</span>read())
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Parse output tùy model</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> model_id<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#34;cohere.embed-&#34;</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># &#34;embeddings&#34;: [ [1024 floats] ]</span>
+</span></span><span style="display:flex;"><span>        embeddings <span style="color:#f92672">=</span> response_body<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;embeddings&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> embeddings <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> isinstance(embeddings, list):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;No embeddings found in Cohere response&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> embeddings[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Titan: {&#34;embedding&#34;: [..]}</span>
+</span></span><span style="display:flex;"><span>        embedding <span style="color:#f92672">=</span> response_body<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;embedding&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> embedding:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;No embedding found in Titan response&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> embedding
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">load_index_if_needed</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> INDEX_CACHE[<span style="color:#e6db74">&#34;loaded&#34;</span>]:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Loading legal index from s3://</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">/</span><span style="color:#e6db74">%s</span><span style="color:#e6db74"> ...&#34;</span>,
+</span></span><span style="display:flex;"><span>        LEGAL_INDEX_BUCKET, LEGAL_INDEX_KEY
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        obj <span style="color:#f92672">=</span> s3<span style="color:#f92672">.</span>get_object(Bucket<span style="color:#f92672">=</span>LEGAL_INDEX_BUCKET, Key<span style="color:#f92672">=</span>LEGAL_INDEX_KEY)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> ClientError <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">&#34;Failed to get index object from S3: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span>, e)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    chunks: List[Dict[str, Any]] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    vectors: List[List[float]] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> obj[<span style="color:#e6db74">&#34;Body&#34;</span>]<span style="color:#f92672">.</span>iter_lines():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> line:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            rec <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(line<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#34;utf-8&#34;</span>))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> json<span style="color:#f92672">.</span>JSONDecodeError:
+</span></span><span style="display:flex;"><span>            logger<span style="color:#f92672">.</span>warning(<span style="color:#e6db74">&#34;Invalid JSON line in index, skipped&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        emb <span style="color:#f92672">=</span> rec<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;embedding&#34;</span>)
+</span></span><span style="display:flex;"><span>        text <span style="color:#f92672">=</span> (rec<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;text&#34;</span>) <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;&#34;</span>)<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> emb <span style="color:#f92672">or</span> <span style="color:#f92672">not</span> text:
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Bỏ qua record thiếu embedding / text</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Tách embedding ra khỏi metadata</span>
+</span></span><span style="display:flex;"><span>        rec_no_emb <span style="color:#f92672">=</span> dict(rec)
+</span></span><span style="display:flex;"><span>        rec_no_emb<span style="color:#f92672">.</span>pop(<span style="color:#e6db74">&#34;embedding&#34;</span>, <span style="color:#66d9ef">None</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        vectors<span style="color:#f92672">.</span>append(emb)
+</span></span><span style="display:flex;"><span>        chunks<span style="color:#f92672">.</span>append(rec_no_emb)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    INDEX_CACHE[<span style="color:#e6db74">&#34;chunks&#34;</span>] <span style="color:#f92672">=</span> chunks
+</span></span><span style="display:flex;"><span>    INDEX_CACHE[<span style="color:#e6db74">&#34;vectors&#34;</span>] <span style="color:#f92672">=</span> vectors
+</span></span><span style="display:flex;"><span>    INDEX_CACHE[<span style="color:#e6db74">&#34;loaded&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;Loaded </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> chunks with embeddings into cache&#34;</span>,
+</span></span><span style="display:flex;"><span>        len(chunks)
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">parse_event_body</span>(event: Dict[str, Any]) <span style="color:#f92672">-&gt;</span> Dict[str, Any]:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;body&#34;</span> <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> event:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> event
+</span></span><span style="display:flex;"><span>    body <span style="color:#f92672">=</span> event[<span style="color:#e6db74">&#34;body&#34;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> event<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;isBase64Encoded&#34;</span>):
+</span></span><span style="display:flex;"><span>        body <span style="color:#f92672">=</span> base64<span style="color:#f92672">.</span>b64decode(body)<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#34;utf-8&#34;</span>)  <span style="color:#75715e"># cần import base64 nếu dùng</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        data <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>loads(body)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> json<span style="color:#f92672">.</span>JSONDecodeError:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#34;Request body must be valid JSON&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> data
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">apply_filters</span>(rec: Dict[str, Any], filters: Dict[str, Any]) <span style="color:#f92672">-&gt;</span> bool:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    filters dạng:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;source_type&#34;: [&#34;legal&#34;, &#34;template&#34;],
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;doc_category&#34;: [&#34;luat&#34;, &#34;nghi_dinh&#34;],
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &#34;field&#34;: [&#34;Xây dựng - Đô thị&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Trả về True nếu record PASS filter.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> filters:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># source_type</span>
+</span></span><span style="display:flex;"><span>    st_list <span style="color:#f92672">=</span> filters<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;source_type&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> st_list:
+</span></span><span style="display:flex;"><span>        st_val <span style="color:#f92672">=</span> rec<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;source_type&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> st_val <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> st_list:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># doc_category</span>
+</span></span><span style="display:flex;"><span>    cat_list <span style="color:#f92672">=</span> filters<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;doc_category&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> cat_list:
+</span></span><span style="display:flex;"><span>        cat_val <span style="color:#f92672">=</span> rec<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;doc_category&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> cat_val <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> cat_list:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># field</span>
+</span></span><span style="display:flex;"><span>    field_list <span style="color:#f92672">=</span> filters<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;field&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> field_list:
+</span></span><span style="display:flex;"><span>        field_val <span style="color:#f92672">=</span> rec<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;field&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> field_val <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> field_list:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">search_index</span>(query: str, top_k: int, filters: Dict[str, Any]) <span style="color:#f92672">-&gt;</span> List[Dict[str, Any]]:
+</span></span><span style="display:flex;"><span>    load_index_if_needed()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    q_emb <span style="color:#f92672">=</span> get_embedding(query)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    scores: List[Tuple[float, int]] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> i, vec <span style="color:#f92672">in</span> enumerate(INDEX_CACHE[<span style="color:#e6db74">&#34;vectors&#34;</span>]):
+</span></span><span style="display:flex;"><span>        s <span style="color:#f92672">=</span> cosine_similarity(q_emb, vec)
+</span></span><span style="display:flex;"><span>        scores<span style="color:#f92672">.</span>append((s, i))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># sort từ cao xuống thấp</span>
+</span></span><span style="display:flex;"><span>    scores<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> x: x[<span style="color:#ae81ff">0</span>], reverse<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    results: List[Dict[str, Any]] <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> score, idx <span style="color:#f92672">in</span> scores:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> score <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>        rec <span style="color:#f92672">=</span> INDEX_CACHE[<span style="color:#e6db74">&#34;chunks&#34;</span>][idx]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> apply_filters(rec, filters):
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># copy metadata + thêm score</span>
+</span></span><span style="display:flex;"><span>        res <span style="color:#f92672">=</span> dict(rec)
+</span></span><span style="display:flex;"><span>        res[<span style="color:#e6db74">&#34;score&#34;</span>] <span style="color:#f92672">=</span> score
+</span></span><span style="display:flex;"><span>        results<span style="color:#f92672">.</span>append(res)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> len(results) <span style="color:#f92672">&gt;=</span> top_k:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> results
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">make_response</span>(status_code: int, body: Dict[str, Any]) <span style="color:#f92672">-&gt;</span> Dict[str, Any]:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;statusCode&#34;</span>: status_code,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;headers&#34;</span>: {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Content-Type&#34;</span>: <span style="color:#e6db74">&#34;application/json&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;Access-Control-Allow-Origin&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>,  <span style="color:#75715e"># cho demo</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;body&#34;</span>: json<span style="color:#f92672">.</span>dumps(body, ensure_ascii<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>),
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------------------------------------------------------</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Lambda handler</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># -----------------------------------------------------------------------------</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lambda_handler</span>(event, context):
+</span></span><span style="display:flex;"><span>    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;Received event: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span>, json<span style="color:#f92672">.</span>dumps(event)[:<span style="color:#ae81ff">1000</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        body <span style="color:#f92672">=</span> parse_event_body(event)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># ==================================================================</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 🔥 ĐOẠN CODE MỚI: XỬ LÝ KEEP WARM</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># ==================================================================</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> body<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;keep_warm&#34;</span>):
+</span></span><span style="display:flex;"><span>            logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74">&#34;Keep-warm ping received. Checking index cache...&#34;</span>)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Quan trọng: Gọi hàm này để tải file từ S3 vào RAM (nếu chưa có)</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Giúp người dùng tiếp theo không bị chờ lâu (Cold Start)</span>
+</span></span><span style="display:flex;"><span>            load_index_if_needed()
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> make_response(<span style="color:#ae81ff">200</span>, {<span style="color:#e6db74">&#34;message&#34;</span>: <span style="color:#e6db74">&#34;Pong! I am warm and index is loaded.&#34;</span>})
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># ==================================================================</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        query <span style="color:#f92672">=</span> (body<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;query&#34;</span>) <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;&#34;</span>)<span style="color:#f92672">.</span>strip()
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> query:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> make_response(<span style="color:#ae81ff">400</span>, {<span style="color:#e6db74">&#34;error&#34;</span>: <span style="color:#e6db74">&#34;query is required&#34;</span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        language <span style="color:#f92672">=</span> (body<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;language&#34;</span>) <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;vi&#34;</span>)<span style="color:#f92672">.</span>lower()
+</span></span><span style="display:flex;"><span>        top_k <span style="color:#f92672">=</span> body<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;top_k&#34;</span>) <span style="color:#f92672">or</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            top_k <span style="color:#f92672">=</span> int(top_k)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> top_k <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span>                top_k <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span>:
+</span></span><span style="display:flex;"><span>            top_k <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        filters <span style="color:#f92672">=</span> body<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;filters&#34;</span>) <span style="color:#f92672">or</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Thực hiện tìm kiếm (khi đã chắc chắn index được load)</span>
+</span></span><span style="display:flex;"><span>        results <span style="color:#f92672">=</span> search_index(query<span style="color:#f92672">=</span>query, top_k<span style="color:#f92672">=</span>top_k, filters<span style="color:#f92672">=</span>filters)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        resp <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;query&#34;</span>: query,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;language&#34;</span>: language,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;top_k&#34;</span>: top_k,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#34;results&#34;</span>: results,
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> make_response(<span style="color:#ae81ff">200</span>, resp)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">ValueError</span> <span style="color:#66d9ef">as</span> ve:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> make_response(<span style="color:#ae81ff">400</span>, {<span style="color:#e6db74">&#34;error&#34;</span>: str(ve)})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> ClientError <span style="color:#66d9ef">as</span> ce:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">&#34;AWS client error: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span>, ce)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> make_response(
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">502</span>,
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;error&#34;</span>: <span style="color:#e6db74">&#34;Upstream AWS error&#34;</span>, <span style="color:#e6db74">&#34;details&#34;</span>: str(ce)},
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74">&#34;Unexpected error: </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span>, e)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> make_response(
+</span></span><span style="display:flex;"><span>            <span style="color:#ae81ff">500</span>,
+</span></span><span style="display:flex;"><span>            {<span style="color:#e6db74">&#34;error&#34;</span>: <span style="color:#e6db74">&#34;Internal server error&#34;</span>, <span style="color:#e6db74">&#34;details&#34;</span>: str(e)},
+</span></span><span style="display:flex;"><span>        )
+</span></span></code></pre></div><ol start="4">
+<li>Bấm nút <strong>Deploy</strong> (nút xám) để lưu thay đổi.</li>
+</ol>
+<p><img src="../../../../images/5-Workshop/5.3-Infrastructure/3.13.png" alt="alt text"></p>
+<h4 id="3-cấu-hình-configuration">3. Cấu hình (Configuration)</h4>
+<p>Chuyển sang tab <strong>Configuration</strong> để thiết lập thông số kỹ thuật.</p>
+<p><strong>A. General configuration</strong></p>
+<ol>
+<li>Chọn mục <strong>General configuration</strong> ở menu trái -&gt; Bấm <strong>Edit</strong>.</li>
+<li><strong>Memory</strong>: Tăng lên <code>3000 MB</code>.</li>
+<li><strong>Timeout</strong>: Tăng lên <code>1 min 0 sec</code>.</li>
+<li>Bấm <strong>Save</strong>.
+<img src="../../../../images/5-Workshop/5.3-Infrastructure/3.15.png" alt="alt text"></li>
+</ol>
+<p><strong>B. Environment variables</strong></p>
+<ol>
+<li>Chọn mục <strong>Environment variables</strong> ở menu trái -&gt; Bấm <strong>Edit</strong>.</li>
+<li>Bấm <strong>Add environment variable</strong> và thêm 2 dòng sau:
+<ul>
+<li>Key: <code>LEGAL_INDEX_BUCKET</code> | Value: <code>&lt;Tên-Bucket-S3-Của-Bạn&gt;</code></li>
+<li>Key: <code>LEGAL_INDEX_KEY</code> | Value: <code>legal-corpus/index/legal_chunks_with_emb.jsonl</code></li>
+</ul>
+</li>
+<li>Bấm <strong>Save</strong>.</li>
+</ol>
+<p><img src="../../../../images/5-Workshop/5.3-Infrastructure/3.16.png" alt="alt text"></p>
+<h4 id="4-cấp-quyền-permissions">4. Cấp quyền (Permissions)</h4>
+<ol>
+<li>Chọn mục <strong>Permissions</strong> ở menu trái.</li>
+<li>Bấm vào <strong>Role name</strong> (đường link màu xanh) để mở trang IAM Role.</li>
+<li>Tại trang IAM vừa mở: Bấm <strong>Add permissions</strong> -&gt; <strong>Attach policies</strong>.</li>
+<li>Tìm kiếm và tích chọn 2 policies sau:
+<ul>
+<li><code>AmazonBedrockFullAccess</code></li>
+<li><code>AmazonS3FullAccess</code></li>
+</ul>
+</li>
+<li>Bấm <strong>Add permissions</strong>.</li>
+</ol>
+<p><img src="../../../../images/5-Workshop/5.3-Infrastructure/3.17.png" alt="alt text"></p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../../../../vi/5-workshop/5.4-backed/" title="Xây dựng Backend (Lambda)"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../../../../vi/5-workshop/5.4-backed/5.4.2-other-lambdas/" title="Tạo các Lambda phụ trợ" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../../../../js/clipboard.min.js?1765271000"></script>
+    <script src="../../../../js/perfect-scrollbar.min.js?1765271000"></script>
+    <script src="../../../../js/perfect-scrollbar.jquery.min.js?1765271000"></script>
+    <script src="../../../../js/jquery.sticky.js?1765271000"></script>
+    <script src="../../../../js/featherlight.min.js?1765271000"></script>
+    <script src="../../../../js/highlight.pack.js?1765271000"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../../../js/modernizr.custom-3.6.0.js?1765271000"></script>
+    <script src="../../../../js/learn.js?1765271000"></script>
+    <script src="../../../../js/hugo-learn.js?1765271000"></script>
+
+    <link href="../../../../mermaid/mermaid.css?1765271000" rel="stylesheet" />
+    <script src="../../../../mermaid/mermaid.js?1765271000"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function (i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    ((i[r] =
+      i[r] ||
+      function () {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date()));
+    ((a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]));
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "https://www.google-analytics.com/analytics.js",
+    "ga",
+  );
+
+  ga("create", "UA-158079754-2", "auto");
+  ga("send", "pageview");
+</script>
+
+  </body>
+</html>

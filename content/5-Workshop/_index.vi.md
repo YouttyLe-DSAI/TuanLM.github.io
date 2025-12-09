@@ -1,5 +1,5 @@
 ---
-title: "Tong quan "
+title : "Tổng quan"
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
@@ -8,10 +8,14 @@ pre: " <b> 5. </b> "
 
 #### Giới thiệu
 
-Trong kỷ nguyên số, việc xử lý và phân tích các văn bản pháp lý phức tạp là một thách thức lớn đối với nhiều doanh nghiệp. Workshop này sẽ hướng dẫn bạn xây dựng **"Smart Contract Assistant"** - một ứng dụng web hiện đại tích hợp Trí tuệ nhân tạo tạo sinh (Generative AI) để giải quyết vấn đề này.
+Nền tảng AI Contract Intelligence là một dịch vụ web dành cho cá nhân và các nhóm người dùng nhỏ (freelancer, chủ doanh nghiệp nhỏ, nhân sự hành chính/pháp lý) làm việc với hợp đồng hằng ngày nhưng không có chuyên môn pháp lý sâu. Giải pháp sử dụng Amazon Bedrock và kiến trúc AWS serverless hoàn toàn để phân tích hợp đồng, làm nổi bật rủi ro, gợi ý chỉnh sửa điều khoản, và tạo tóm tắt cũng như mẫu hợp đồng mới.
 
-Ứng dụng cho phép người dùng tương tác với các tài liệu hợp đồng thông qua ngôn ngữ tự nhiên. Bạn có thể đặt câu hỏi về các điều khoản, yêu cầu tóm tắt nội dung, hoặc thậm chí yêu cầu AI soạn thảo một hợp đồng mới dựa trên các mẫu có sẵn.
+Được xây dựng trên AWS Amplify, Lambda, API Gateway, DynamoDB, S3, Cognito, EventBridge và CloudWatch, nền tảng cung cấp khả năng rà soát hợp đồng bằng AI với độ trễ thấp, chi phí thấp và bảo mật cao, được tối ưu cho người dùng đơn lẻ hoặc các nhóm nhỏ mà không cần tính năng phức tạp như hệ thống doanh nghiệp.
 
+Mục tiêu chính của ứng dụng là hỗ trợ người dùng (như luật sư, nhân viên pháp chế hoặc chủ doanh nghiệp) thực hiện các tác vụ phức tạp như:
+*   **Tra cứu thông tin:** Hỏi đáp về các điều khoản luật dựa trên kho dữ liệu văn bản pháp lý có sẵn.
+*   **Soạn thảo tự động:** Yêu cầu AI tạo ra các bản nháp hợp đồng dựa trên các template mẫu và thông tin cung cấp.
+*   **Phân tích:** Tóm tắt và kiểm tra nội dung hợp đồng.
 #### Kiến trúc giải pháp
 
 Giải pháp được xây dựng hoàn toàn trên kiến trúc **Serverless** (Không máy chủ) của AWS, giúp tối ưu hóa chi phí vận hành và khả năng mở rộng. Điểm nhấn của kiến trúc là việc áp dụng kỹ thuật **RAG (Retrieval-Augmented Generation)**, cho phép AI truy xuất thông tin chính xác từ kho dữ liệu riêng của bạn thay vì chỉ dựa vào kiến thức đã được huấn luyện trước.
