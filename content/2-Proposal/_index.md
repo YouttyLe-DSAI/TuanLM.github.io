@@ -282,3 +282,4 @@ The platform is implemented as a fully serverless, secure, and scalable architec
 * Faster contract understanding and reduced legal risk for non-expert users.
 * Significant reduction in legal advisory costs and manual review time.
 * A scalable SaaS foundation that can be extended to support more features or additional user segments in future phases.
+[ Proposal chi tiet tai day ](https://drive.google.com/file/d/1ZUycnAKHjt-xK7lZuvbvpXkFTl6jLiQJ/view?usp=sharing)
